@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'css/swiper.css';
+@import 'css/utility-patterns.css';
+
 input[type="text"],
 textarea {
 	-webkit-appearance: none;

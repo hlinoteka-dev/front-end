@@ -1,23 +1,6 @@
 import '../globals.css'
-import localFont from 'next/font/local'
-import { DM_Sans } from 'next/font/google'
 import Header from '@/components/ui/header'
-
-export const pano = localFont({
-	src: [
-		{
-			path: '../../public/fonts/pano-regular.ttf',
-			weight: '400',
-		},
-		{
-			path: '../../public/fonts/pano-bold.ttf',
-			weight: '700',
-		}
-	],
-	variable: '--font-pano'
-})
-
-export const dmSans = DM_Sans({ subsets: ['latin'] })
+import { pano } from '@/components/fonts'
 
 export const metadata = {
 	title: 'Create Next App',
@@ -29,7 +12,7 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={`${pano.variable} font-sans`}>
 			<body className="bg-hlinoteka-dark text-hlinoteka-light px-8 mx-auto">
 				<Header />
-				<div className="mt-20">
+				<div className="mt-20 overflow-hidden">
 					{children}
 				</div>
 			</body>

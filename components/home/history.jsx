@@ -2,7 +2,7 @@ import Image from "next/image"
 import Button from "../ui/button"
 import ImageOffering from "@/public/images/home-door.jpg"
 
-import { dmSans } from "../../app/(default)/layout"
+import { dmSans } from "@/components/fonts"
 
 export default function History() {
 	return (

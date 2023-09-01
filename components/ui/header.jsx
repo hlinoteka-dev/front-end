@@ -1,9 +1,13 @@
+"use client"
+
 import Link from "next/link"
 import Button from "./button"
+import { useSelectedLayoutSegments } from 'next/navigation'
 
 export default function Header() {
+	const segments = useSelectedLayoutSegments()
 	return (
-		<header className="px-8 w-full fixed top-0 left-0 bg-hlinoteka-dark">
+		<header className="px-8 w-full fixed top-0 left-0 bg-hlinoteka-dark z-50">
 			<div className="border-b border-b-hlinoteka-special">
 				<div className="px-8 mx-auto max-w-8xl flex justify-between h-20">
 					<Link className="flex place-items-center" href="/">
@@ -12,12 +16,12 @@ export default function Header() {
 						</svg>
 					</Link>
 					<div className="flex place-items-center gap-x-12">
-						<Link href="/" className="px-2 text-sm text-hlinoteka-light hover:text-hlinoteka-active transition-color duration-150 ease-in-out">O dílně</Link>
-						<Link href="/" className="px-2 text-sm text-hlinoteka-light hover:text-hlinoteka-active transition-color duration-150 ease-in-out">Členové</Link>
-						<Link href="/" className="px-2 text-sm text-hlinoteka-light hover:text-hlinoteka-active transition-color duration-150 ease-in-out">Služby</Link>
-						<Link href="/" className="px-2 text-sm text-hlinoteka-light hover:text-hlinoteka-active transition-color duration-150 ease-in-out">Produkty</Link>
-						<Link href="/" className="px-2 text-sm text-hlinoteka-light hover:text-hlinoteka-active transition-color duration-150 ease-in-out">Události</Link>
-						<Link href="/" className="px-2 text-sm text-hlinoteka-light hover:text-hlinoteka-active transition-color duration-150 ease-in-out">Kontakt</Link>
+						<Link href="/o-dilne" className={`px-2 text-sm ${segments.includes('o-dilne') ? "text-hlinoteka-active hover:text-hlinoteka-light" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>O dílně</Link>
+						<Link href="/clenove" className={`px-2 text-sm ${segments.includes('clenove') ? "text-hlinoteka-active hover:text-hlinoteka-light" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Členové</Link>
+						<Link href="/sluzby" className={`px-2 text-sm ${segments.includes('sluzby') ? "text-hlinoteka-active hover:text-hlinoteka-light" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Služby</Link>
+						<Link href="/produkty" className={`px-2 text-sm ${segments.includes('produkty') ? "text-hlinoteka-active hover:text-hlinoteka-light" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Produkty</Link>
+						<Link href="/udalosti" className={`px-2 text-sm ${segments.includes('udalosti') ? "text-hlinoteka-active hover:text-hlinoteka-light" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Události</Link>
+						<Link href="/kontakt" className={`px-2 text-sm ${segments.includes('kontakt') ? "text-hlinoteka-active hover:text-hlinoteka-light" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Kontakt</Link>
 					</div>
 					<div className="my-auto">
 						<Button href="/">REZERVACE</Button>

@@ -1,7 +1,7 @@
 "use client"
 
 import Button from "../ui/button"
-import { dmSans } from "../../app/(default)/layout"
+import { dmSans } from "@/components/fonts"
 
 export default function Events() {
 	const dummyEvent = {
@@ -18,8 +18,8 @@ export default function Events() {
 	const dateTo = new Date(dummyEvent.dateTo)
 
 	// Convert to UTC+2
-	dateFrom.setUTCHours(dateFrom.getUTCHours() - 2);
-	dateTo.setUTCHours(dateTo.getUTCHours() - 2);
+	dateFrom.setUTCHours(dateFrom.getUTCHours() - 2)
+	dateTo.setUTCHours(dateTo.getUTCHours() - 2)
 
 	// Format date strings
 	const dateFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' }

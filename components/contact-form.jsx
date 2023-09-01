@@ -1,6 +1,6 @@
 import Button from "./ui/button"
 
-import { dmSans } from "../app/(default)/layout"
+import { dmSans } from "@/components/fonts"
 
 export default function ContactForm() {
 	return (
