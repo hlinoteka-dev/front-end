@@ -1,5 +1,5 @@
 import '../globals.css'
-import Header from '@/components/ui/header'
+import Header from '@/components/header'
 import { pano } from '@/components/fonts'
 
 export const metadata = {

@@ -1,4 +1,5 @@
 .swiper-slide {
 	width: auto !important;
+	object-fit: cover;
 	margin-right: 10px;
 }

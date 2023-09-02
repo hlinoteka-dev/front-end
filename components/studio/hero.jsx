@@ -1,5 +1,5 @@
-import Button from "../ui/button"
-import SpinnerText from "../ui/spinner-text"
+import Button from "../button"
+import SpinnerText from "../spinner-text"
 import { dmSans } from "@/components/fonts"
 import HeroGallery from "./hero-swiper"
 

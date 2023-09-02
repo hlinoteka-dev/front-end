@@ -1,7 +1,7 @@
 import Image from "next/image"
-import Button from "../ui/button"
+import Button from "../button"
 import HeroImage from "@/public/images/home-hero-main.jpg"
-import SpinnerText from "../ui/spinner-text"
+import SpinnerText from "../spinner-text"
 
 export default function Hero() {
 	return (

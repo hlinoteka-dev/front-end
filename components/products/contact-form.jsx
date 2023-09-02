@@ -7,10 +7,10 @@ export default function ContactForm() {
 		<div className="border-b border-b-hlinoteka-special">
 			<div className="p-24 max-w-8xl mx-auto">
 				<div className="flex flex-col justify-center text-center gap-6">
-					<h2 className="text-2xl font-bold leading-tight">Kontaktujte nás</h2>
+					<h2 className="text-2xl font-bold leading-tight">Nezávazná poptávka</h2>
 					<div className={`${dmSans.className}`}>
-						<div>Máte jakýkoliv dotaz ohledně naší dílny?</div>
-						<div>Vyplňte formulář a my vám ho radi zodpovíme.</div>
+						<div>Máte zájem o některé z našich produktů?</div>
+						<div>Vyplňte formulář a my vás budeme kontaktovat.</div>
 					</div>
 					<form className="flex flex-col justify-center gap-5 w-5/12 mx-auto">
 						<input type="text" placeholder="JMÉNO A PŘÍJMENÍ" className="text-center" />

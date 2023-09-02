@@ -1,6 +1,6 @@
 "use client"
 
-import Button from "../ui/button"
+import Button from "../button"
 import { dmSans } from "@/components/fonts"
 
 export default function Events() {

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { dmSans } from "@/components/fonts"
-import FooterImage from "../../public/images/footer.jpg"
+import FooterImage from "@/public/images/footer.jpg"
 
 export default function Footer() {
 	return (
