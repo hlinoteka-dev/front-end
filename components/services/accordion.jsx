@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import AccordionBasic from "../accordion-basic"
 import Button from "../button"
 import ServiceSwiper from "./service-swiper"
+import ServiceSwiperButtons from "./service-swiper-buttons"
 
 export default function Accordion() {
 	const [openAccordion, setOpenAccordion] = useState(null)
@@ -163,26 +164,29 @@ export default function Accordion() {
 	return (
 		<div>
 			<div className="relative">
-				<div className="px-24 pt-20 pb-28 max-w-8xl mx-auto">
+				<div className="py-8 lg:px-24 lg:pt-20 lg:pb-28 max-w-8xl mx-auto">
 					<div className="">
 						{accordions.map((accordion, index) => (
 							<AccordionBasic title={accordion.title} open={openAccordion === index} onClick={() => handleAccordionClick(index)} className={accordion.className}>
 								<div className="flex flex-col">
-									{(accordion.subtitle1 || accordion.subtitle2) && (
-										<div className="flex flex-col">
-											{accordion.subtitle1 && (<span className="text-hlinoteka-inactive">{accordion.subtitle1}</span>)}
-											{accordion.subtitle2 && (<span>{accordion.subtitle2}</span>)}
-										</div>
-									)}
+									<div className="mb-4 w-full flex justify-between items-center">
+										{(accordion.subtitle1 || accordion.subtitle2) && (
+											<div className="flex flex-col">
+												{accordion.subtitle1 && (<span className="text-hlinoteka-inactive">{accordion.subtitle1}</span>)}
+												{accordion.subtitle2 && (<span>{accordion.subtitle2}</span>)}
+											</div>
+										)}
+										<ServiceSwiperButtons index={index} />
+									</div>
 									<div className="mb-8 relative before:absolute before:inset-0 before:-translate-x-full before:z-20 before:bg-gradient-to-l before:from-transparent before:to-hlinoteka-dark before:to-20% after:absolute after:inset-0 after:translate-x-full after:z-20 after:bg-gradient-to-r after:from-transparent after:to-hlinoteka-dark after:to-20%">
 										<ServiceSwiper images={accordion.images} index={index} />
 									</div>
-									<div className="mb-8 grid grid-cols-2 gap-x-8 gap-y-4">
+									<div className="lg:mb-8 grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-4">
 										<div className="space-y-4" dangerouslySetInnerHTML={{ __html: accordion.textA1 + accordion.textA2 + accordion.textA3 }}></div>
 										<div className="space-y-4" dangerouslySetInnerHTML={{ __html: accordion.textB1 + accordion.textB2 + accordion.textB3 }}></div>
 									</div>
 									<div>
-										<Button type="secondary" className="text-md px-12">{accordion.button}</Button>
+										<Button type="secondary" className="text-xl md:text-md px-12 w-full md:w-auto">{accordion.button}</Button>
 									</div>
 								</div>
 							</AccordionBasic>

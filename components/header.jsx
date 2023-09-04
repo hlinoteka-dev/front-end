@@ -3,12 +3,30 @@
 import Link from "next/link"
 import Button from "./button"
 import { useSelectedLayoutSegments } from 'next/navigation'
+import { useState, useEffect } from "react"
 
 export default function Header() {
+
+	const [open, setOpen] = useState(false)
 	const segments = useSelectedLayoutSegments()
+
+  useEffect(() => {
+    const handleLinkClick = () => {
+      setOpen(false)
+    }
+
+    if (open) {
+      document.addEventListener("click", handleLinkClick)
+    }
+
+    return () => {
+      document.removeEventListener("click", handleLinkClick)
+    }
+  }, [open])
+
 	return (
-		<header className="px-8 w-full fixed top-0 left-0 bg-hlinoteka-dark z-50">
-			<div className="border-b border-b-hlinoteka-special">
+		<header className="xl:px-8 w-full fixed top-0 left-0 bg-hlinoteka-dark z-50">
+			<div className="border-b border-b-hlinoteka-special hidden xl:block">
 				<div className="px-8 mx-auto max-w-8xl flex justify-between h-20">
 					<Link className="flex place-items-center" href="/">
 						<svg width="37" height="52" viewBox="0 0 37 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +46,48 @@ export default function Header() {
 					</div>
 				</div>
 			</div>
+			<div className="p-2 w-full bg-hlinoteka-dark border-b border-b-hlinoteka-special xl:hidden">
+				<div className="flex justify-between">
+					<Link className="flex place-items-center w-[120px]" href="/">
+						<svg width="37" height="52" viewBox="0 0 37 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M16.996 48.2293C17.2287 47.077 17.3254 45.9056 17.1512 44.7157C17.0162 43.7946 16.8835 42.8843 16.5628 42.0013C16.099 40.7254 15.6396 39.448 15.1933 38.1667C14.476 36.1057 14.848 33.5018 15.8308 31.5306C16.6382 29.9109 17.3008 29.0115 18.772 27.9353C19.634 27.3047 20.9795 26.6138 22.1409 26.5506C23.5705 26.4728 24.4828 27.2585 24.975 28.0686C25.5339 28.9876 25.9469 30.9936 25.7234 32.3026C25.4956 33.6405 25.1242 34.9446 24.467 35.9773C23.2635 37.868 21.6717 38.1623 20.8839 38.6139C19.9388 39.1558 19.0495 39.6792 19.1992 41.2238C19.2904 42.164 19.9601 42.6781 20.6785 42.7064C22.0333 42.7597 22.6052 41.2929 23.4056 41.5524C23.6432 41.6297 24.1556 41.9257 24.0622 42.6134C24.0168 42.9453 23.8879 43.2364 23.5241 43.5764C22.7637 44.2864 22.1513 44.3577 21.3849 44.837C21.0287 45.0596 19.9055 45.4937 19.5488 46.985C19.2385 48.2837 19.3325 49.2696 20.2082 50.287C20.743 50.9084 22.8107 51.885 23.8803 50.4111C24.0627 50.1597 24.3026 49.6728 24.4812 49.4171C25.2012 48.3871 25.9862 47.9067 27.1782 49.0618C27.8556 49.7185 28.3549 50.1445 29.5201 50.62C30.6859 51.095 32.133 51.3921 33.449 51.0623C35.1583 50.6347 36.5584 49.5868 36.9518 47.7516C37.2063 46.5639 36.4279 45.5808 35.2228 45.7854C34.9081 45.8387 34.6115 45.9878 34.3083 46.0971C33.243 46.4812 32.234 46.9257 30.9929 46.6526C29.0006 46.2141 28.3341 44.7288 28.8804 43.3006C29.3082 42.1819 30.5739 42.0519 31.5823 42.7788C32.1559 43.1923 32.8541 43.3408 33.6276 43.127C34.5596 42.8691 35.0201 42.2423 35.4446 41.5693C36.0995 40.5307 36.3803 38.893 36.3049 36.9887C36.2989 36.7738 36.2481 35.2178 35.8483 34.4321C35.7985 34.9163 35.7177 35.2956 35.6199 35.7635C35.5128 36.276 35.0753 37.4572 34.5787 38.1068C34.1362 38.6857 33.78 39.1101 33.1108 39.3876C32.7689 39.5296 31.7872 39.7445 31.2327 39.1824C30.6919 38.634 30.5963 38.0388 30.8487 37.1732C31.0808 36.3772 31.8194 35.5143 32.3378 34.8451C33.2026 33.7286 34.0991 32.1339 34.3711 30.8423C34.7142 29.215 34.2782 27.117 32.8229 25.9897C32.4252 25.6812 32.3892 25.1752 32.9546 24.8733C33.3561 24.6589 33.3801 24.6703 33.7456 24.4108C34.2602 24.0457 34.4804 23.5131 34.2602 22.8384C34.1182 22.4032 33.7789 22.1284 33.3157 22.0397C32.7705 21.9352 32.34 22.1855 31.8986 22.5103C31.2644 22.9771 30.9984 23.2383 30.41 23.957C30.0467 24.401 29.8752 24.7024 29.3759 24.7557C29.0121 24.7944 28.5412 24.5952 28.3986 23.8852C28.2926 23.3585 28.9296 22.5658 29.6671 22.1638C30.575 21.6686 31.2824 21.4641 31.9008 20.9031C32.8126 20.0756 32.7918 19.0212 32.0969 17.9559C31.4725 16.9994 30.0587 16.5701 28.9454 16.7007C26.7139 16.9618 24.4047 18.1006 22.8429 19.3139C21.0489 20.7067 19.8208 22.2976 19.0375 23.6551C18.406 24.7492 17.7275 25.7057 16.7917 26.4244C15.8559 27.1437 14.8398 27.2808 14.2963 26.9217C13.4954 26.3923 13.3468 25.4842 13.5058 24.7911C13.72 23.8591 14.4099 23.2106 15.4041 22.7938C15.9045 22.5843 16.8332 22.1986 17.267 21.6132C17.6018 21.161 17.9099 20.3368 17.5434 19.6648C17.1107 18.8716 16.7546 18.5995 13.6528 17.3215C12.6869 16.9232 11.2393 15.328 10.8596 13.9248C10.5384 12.7376 10.5761 11.1272 10.8968 9.92586C11.3551 8.20767 12.3269 6.85727 13.9396 5.94159C15.2534 5.19566 16.5344 5.50524 17.0905 6.99438C17.7198 8.68047 17.4571 10.3687 17.2894 12.0586C17.1462 13.5026 17.3298 14.8557 18.4524 15.9743C19.3079 16.8264 21.1254 17.5739 22.3179 16.9798C23.6011 16.3405 23.7279 14.5043 22.3895 13.7844C21.9279 13.5358 21.4105 13.4471 21.1702 12.8878C20.9265 12.322 21.0789 11.7213 21.5892 11.3698C22.195 10.9525 23.1138 11.1593 23.5055 11.8046C24.2009 12.9498 25.0204 13.8198 25.7338 14.1125C26.8701 14.5788 28.0069 14.7839 29.7179 14.5119C31.3086 14.2589 32.9961 12.872 33.88 11.9645C34.4503 11.3785 35.5347 9.83064 36.1618 8.01452C36.6398 6.6293 36.967 5.05964 36.9599 3.94102C36.9507 2.44917 36.8441 1.70324 35.9744 0.640116C35.3632 -0.107989 34.1608 -0.224421 33.4768 0.602574C33.0781 1.08463 32.8175 1.67712 32.5525 2.24351C31.5435 4.40458 31.0339 5.76694 29.7976 6.9231C28.4876 8.14782 27.0443 8.59341 25.1012 8.62551C22.9445 8.66088 21.1745 7.59558 20.6446 6.70112C20.106 5.79197 20.0918 5.56509 19.6105 4.13363C19.3221 3.27616 18.6261 1.92631 17.8193 1.25111C16.158 -0.138457 13.7609 -0.306576 11.8844 0.431734C9.17815 1.49703 8.00965 2.74188 7.00012 4.08901C5.27605 6.39045 4.90457 8.4389 4.5402 10.9444C4.11028 13.8992 4.92315 16.5826 5.53826 18.9336C5.99496 20.6801 6.64613 22.7579 7.19623 24.4728C7.83921 26.4766 7.72394 26.7378 7.8556 27.9881C7.99108 29.2726 7.55022 31.9522 6.85754 33.5627C6.12934 35.2559 2.87185 39.4431 1.75962 41.4099C1.12702 42.5285 -0.0414761 44.6515 0.00113405 47.0819C0.0295408 48.7239 0.383531 49.8442 0.868631 50.4639C1.51488 51.2892 2.58997 51.3871 3.39683 50.9078C4.00539 50.5466 4.06548 49.8382 4.66694 49.6782C5.58961 49.4334 5.46779 51.1929 6.59532 51.1929C8.09268 51.1929 7.74634 49.3442 7.71957 48.9546C7.63053 47.6407 7.56607 46.701 7.55896 45.812C7.5535 45.1341 7.77748 43.4219 8.18282 42.6607C8.51879 42.0296 9.37863 41.3539 10.1079 41.5954C11.2578 41.9763 11.0705 43.608 10.4821 44.5693C9.77578 45.7233 9.11041 46.0209 8.87769 47.694C8.71709 48.8479 8.9427 50.0906 10.2084 49.9307C11.0219 49.8278 11.1475 49.2136 11.201 48.8409C11.2617 48.4198 11.2202 47.7886 11.7298 47.552C11.997 47.4279 12.7667 47.4943 12.5886 48.435C12.5099 48.8512 12.4466 49.3376 12.4996 49.7527C12.6973 51.3045 14.3323 51.472 15.3031 50.8681C16.358 50.2119 16.777 49.3061 16.9949 48.2288L16.996 48.2293Z" fill="#32FF00" />
+						</svg>
+					</Link>
+					<div className="my-auto">
+						<Button href="/">REZERVACE</Button>
+					</div>
+					<div className="my-auto w-[120px] text-right">
+						{open ? (
+							<Button href="/" type="icon-mobile" onClick={() => setOpen(false)}>
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+									<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+								</svg>
+							</Button>
+						) : (
+							<Button href="/" type="icon-mobile" onClick={() => setOpen(true)}>
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+									<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+								</svg>
+							</Button>
+						)}
+					</div>
+				</div>
+				{open && (
+					<div className="py-8">
+						<ul className="flex flex-col place-items-center gap-y-8">
+							<li><Link href="/o-dilne" className={`py-4 text-sm ${segments.includes('o-dilne') ? "text-hlinoteka-active" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>O dílně</Link></li>
+							<li><Link href="/clenove" className={`py-4 text-sm ${segments.includes('clenove') ? "text-hlinoteka-active" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Členové</Link></li>
+							<li><Link href="/sluzby" className={`py-4 text-sm ${segments.includes('sluzby') ? "text-hlinoteka-active" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Služby</Link></li>
+							<li><Link href="/produkty" className={`py-4 text-sm ${segments.includes('produkty') ? "text-hlinoteka-active" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Produkty</Link></li>
+							<li><Link href="/udalosti" className={`py-4 text-sm ${segments.includes('udalosti') ? "text-hlinoteka-active" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Události</Link></li>
+							<li><Link href="/kontakt" className={`py-4 text-sm ${segments.includes('kontakt') ? "text-hlinoteka-active" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Kontakt</Link></li>
+						</ul>
+					</div>
+				)}
+			</div>
+			{open && (
+				<div className="bg-hlinoteka-dark/50 fixed w-screen h-screen"></div>
+			)}
 		</header>
 	)
 }

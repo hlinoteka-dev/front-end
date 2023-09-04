@@ -1,67 +1,57 @@
-"use client"
-
 import Button from "../button"
 import { dmSans } from "@/components/fonts"
 
-export default function Events() {
-	const dummyEvent = {
-		name: "První večeře",
-		dateFrom: "2021-10-15T18:00:00.000Z",
-		dateTo: "2021-10-15T21:00:00.000Z",
-		description: "Do dílny je možno nahlédnout v rámci pravidelných sezónních POP-UPů nebo během otevírací doby a to vždy v pondělí a čtvrtek od 18:30 do 21:30. <br /><br />V případě zájmu o návštěvu mimo otevírací dobu nás prosím kontaktujte předem na emailu.",
-		image: "https://dummyimage.com/873x348/000000/33ff00",
-		url: "https://facebook.com/"
+async function getEvent() {
+	const res = await fetch(`${process.env.URL}/api/events?filter=active&limit=1`)
+
+	if (!res.ok) {
+		throw new Error('Failed to fetch data')
 	}
 
-	// Parse date and time information
-	const dateFrom = new Date(dummyEvent.dateFrom)
-	const dateTo = new Date(dummyEvent.dateTo)
+	return res.json()
+}
 
-	// Convert to UTC+2
-	dateFrom.setUTCHours(dateFrom.getUTCHours() - 2)
-	dateTo.setUTCHours(dateTo.getUTCHours() - 2)
+export default async function Event() {
 
-	// Format date strings
-	const dateFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' }
-	const formattedDateFrom = dateFrom.toLocaleDateString('cs-CZ', dateFormatOptions)
-	const formattedDateTo = dateTo.toLocaleDateString('cs-CZ', dateFormatOptions)
+	const data = await getEvent()
 
-	// Format time strings
-	const timeFormatOptions = { hour: '2-digit', minute: '2-digit', hour12: false }
-	const formattedTimeFrom = dateFrom.toLocaleTimeString('cs-CZ', timeFormatOptions)
-	const formattedTimeTo = dateTo.toLocaleTimeString('cs-CZ', timeFormatOptions)
+	if (data.length === 0) {
+		return <></>
+	}
 
-	// Construct final strings
-	const dates = `${formattedDateFrom} - ${formattedDateTo}`
-	const time = `${formattedTimeFrom} - ${formattedTimeTo}`
+	const event = data[0]
+	const dateFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
+	const dateTo = new Date(event.time[1]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
+	const timeFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
+	const timeTo = new Date(event.time[1]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
 
 	return (
 		<div className="border-b border-b-hlinoteka-special">
-			<div className="px-24 py-20 max-w-8xl mx-auto">
-				<div className="grid grid-cols-2 max-h-96 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
+			<div className="px-2 py-8 sm:p-12 lg:px-24 lg:py-20 max-w-8xl mx-auto">
+				<div className="md:grid md:grid-cols-2 md:max-h-96 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
 					<div>
-						<img src={dummyEvent.image} alt={dummyEvent.name} className="object-cover h-96" />
+						<img src={event.images[0].url} alt={event.name} className="w-full object-cover h-48 md:h-96" />
 					</div>
 					<div className="p-8 flex flex-col bg-hlinoteka-gray h-96">
 						<div className="text-2xl font-bold text-hlinoteka-active">
-							{dummyEvent.name}
+							{event.name}
 						</div>
-						<div className="text-2xl font-bold text-hlinoteka-inactive">
-							{dates}
+						<div className="lg:text-2xl font-bold text-hlinoteka-inactive">
+							{dateFrom} - {dateTo}
 						</div>
-						<div className="text-2xl font-bold text-hlinoteka-inactive">
-							{time}
+						<div className="lg:text-2xl font-bold text-hlinoteka-inactive">
+							{timeFrom} - {timeTo}
 						</div>
 						<div className="mt-4 max-h-52 overflow-y-hidden mb-auto">
-							<p className={`${dmSans.className} font-sans pr-12`} dangerouslySetInnerHTML={{ __html: dummyEvent.description }} />
+							<p className={`${dmSans.className} font-sans pr-12`} dangerouslySetInnerHTML={{ __html: event.description }} />
 						</div>
-						<div className="mt-4 flex justify-end">
-							<Button type="tertiary">FB Event</Button>
+						<div className="mt-4 sm:flex sm:justify-end w-full">
+							<a href={event.url} target="_blank"><Button type="tertiary" className="w-full sm:w-auto">FB Event</Button></a>
 						</div>
 					</div>
 				</div>
-				<div className="mt-8 w-full text-center">
-					<Button type="secondary">Další události</Button>
+				<div className="mt-4 sm:mt-8 w-full text-center">
+					<Button type="secondary" className="w-full sm:w-auto">Další události</Button>
 				</div>
 			</div>
 		</div>

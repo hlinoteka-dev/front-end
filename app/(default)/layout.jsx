@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={`${pano.variable} font-sans`}>
-			<body className="bg-hlinoteka-dark text-hlinoteka-light px-8 mx-auto">
+			<body className="bg-hlinoteka-dark text-hlinoteka-light px-4 sm:px-8 mx-auto">
 				<Header />
 				<div className="mt-20 overflow-hidden">
 					{children}

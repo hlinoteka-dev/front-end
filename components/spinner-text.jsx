@@ -7,14 +7,14 @@ export default function SpinnerText({ className }) {
 		<div className={`${className}`}>
 			<div className="spinner">
 				<ReactCurvedText
-					width={300}
-					height={300}
-					cx={150}
-					cy={150}
-					rx={133}
-					ry={133}
+					width={320}
+					height={320}
+					cx={160}
+					cy={160}
+					rx={158}
+					ry={158}
 					startOffset={0}
-					text="PRAGUE CERAMIC STUDIO • HLINOTÉKA • PRAGUE CERAMIC STUDIO • "
+					text="PRAGUE CERAMIC STUDIO • HLINOTÉKA • PRAGUE CERAMIC STUDIO • HLINOTÉKA • "
 					textProps={{ style: { fill: "#6400FF" } }}
 				/>
 			</div>
