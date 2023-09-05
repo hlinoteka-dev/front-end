@@ -20,7 +20,11 @@ export default function HeroGallery({ className }) {
 
 	useEffect(() => {
 		const carousel = new Swiper('.testimonials-carousel', {
-			slidesPerView: 3.4,
+			breakpoints: {
+				1024: {
+					slidesPerView: 3.4,
+				}
+			},		
 			grabCursor: true,
 			modules: [Navigation],
 			navigation: {

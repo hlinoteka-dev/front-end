@@ -4,7 +4,7 @@ import { dmSans } from "@/components/fonts"
 
 export default async function Event({ event }) {
 
-	const dateFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
+	const dateFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { month: '2-digit', day: '2-digit' })
 	const dateTo = new Date(event.time[1]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
 	const timeFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
 	const timeTo = new Date(event.time[1]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })

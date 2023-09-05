@@ -10,19 +10,19 @@ export default function Header() {
 	const [open, setOpen] = useState(false)
 	const segments = useSelectedLayoutSegments()
 
-  useEffect(() => {
-    const handleLinkClick = () => {
-      setOpen(false)
-    }
+	useEffect(() => {
+		const handleLinkClick = () => {
+			setOpen(false)
+		}
 
-    if (open) {
-      document.addEventListener("click", handleLinkClick)
-    }
+		if (open) {
+			document.addEventListener("click", handleLinkClick)
+		}
 
-    return () => {
-      document.removeEventListener("click", handleLinkClick)
-    }
-  }, [open])
+		return () => {
+			document.removeEventListener("click", handleLinkClick)
+		}
+	}, [open])
 
 	return (
 		<header className="xl:px-8 w-full fixed top-0 left-0 bg-hlinoteka-dark z-50">
@@ -42,7 +42,9 @@ export default function Header() {
 						<Link href="/kontakt" className={`px-2 text-sm ${segments.includes('kontakt') ? "text-hlinoteka-active" : "text-hlinoteka-light hover:text-hlinoteka-active"} transition-color duration-300 ease-in-out`}>Kontakt</Link>
 					</div>
 					<div className="my-auto">
-						<Button href="/">REZERVACE</Button>
+						<a href="https://hlinoteka.reenio.cz/" target="_blank" rel="noopener noreferrer">
+							<Button>REZERVACE</Button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -54,7 +56,9 @@ export default function Header() {
 						</svg>
 					</Link>
 					<div className="my-auto">
-						<Button href="/">REZERVACE</Button>
+						<a href="https://hlinoteka.reenio.cz/" target="_blank" rel="noopener noreferrer">
+							<Button href="/">REZERVACE</Button>
+						</a>
 					</div>
 					<div className="my-auto w-[120px] text-right">
 						{open ? (

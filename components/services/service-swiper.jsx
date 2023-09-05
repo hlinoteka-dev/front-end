@@ -16,7 +16,11 @@ export default function ServiceSwiper({ className, index, images }) {
 
 	useEffect(() => {
 		const carousel = new Swiper(`.testimonials-carousel-${index}`, {
-			slidesPerView: "auto",
+			breakpoints: {
+				1024: {
+					slidesPerView: "auto",
+				}
+			},		
 			grabCursor: true,
 			modules: [Navigation],
 			navigation: {

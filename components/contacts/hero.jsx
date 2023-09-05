@@ -7,7 +7,7 @@ import SocialIcons from "../social-icons"
 export default function Hero() {
 	return (
 		<div className="border-b border-b-hlinoteka-special">
-			<div className="relative grid lg:grid-cols-2 p-12 lg:px-24 lg:pt-20 lg:pb-32 max-w-8xl mx-auto">
+			<div className="relative grid lg:grid-cols-2 px-2 py-8 sm:p-12 lg:px-24 lg:pt-20 lg:pb-28 max-w-8xl mx-auto">
 				<div className="mt-4 lg:mt-0 order-2 lg:order-1 flex flex-col justify-center gap-4">
 					<div className="md:w-1/2">
 						<h1 className="text-2xl font-bold leading-tight">Hlinotéka</h1>

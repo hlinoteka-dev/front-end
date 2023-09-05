@@ -4,6 +4,10 @@ import Products from "@/components/home/products"
 import ContactForm from "@/components/contact-form"
 import Footer from "@/components/footer"
 
+export const metadata = {
+	title: 'Členové - Hlinoteka',
+	description: 'Členové Hlinotéky',
+}
 export default function Clenove() {
 	return (
 		<main className="w-full">

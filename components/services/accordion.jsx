@@ -180,7 +180,9 @@ export default function Accordion() {
 										<div className="space-y-4" dangerouslySetInnerHTML={{ __html: accordion.textB1 + accordion.textB2 + accordion.textB3 }}></div>
 									</div>
 									<div>
-										<Button type="secondary" className="text-xl md:text-md px-12 w-full md:w-auto">{accordion.button}</Button>
+										<a href="https://hlinoteka.reenio.cz/" target="_blank" rel="noopener noreferrer">
+											<Button type="secondary" className="text-xl md:text-md px-12 w-full md:w-auto">{accordion.button}</Button>
+										</a>
 									</div>
 								</div>
 							</AccordionBasic>

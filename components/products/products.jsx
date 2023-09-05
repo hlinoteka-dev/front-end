@@ -13,7 +13,7 @@ export default async function Products() {
 
 	return (
 		<div className="border-b border-b-hlinoteka-special">
-			<div className="p-8 md:p-16 xl:p-24 flex flex-col max-w-8xl mx-auto">
+			<div className="px-2 py-8 sm:p-12 lg:px-24 lg:pt-20 lg:pb-28 flex flex-col max-w-8xl mx-auto">
 				<div className="mb-8">
 					<span className="mr-4">Filter produktů</span>
 					{/* <Select /> */}

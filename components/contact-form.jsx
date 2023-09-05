@@ -1,8 +1,13 @@
-import Button from "@/components/button"
+"use client"
 
+import Button from "@/components/button"
 import { dmSans } from "@/components/fonts"
+import { useState } from "react"
 
 export default function ContactForm() {
+
+	const [checked, setChecked] = useState(false)
+
 	return (
 		<div className="border-b border-b-hlinoteka-special">
 			<div className="px-8 py-12 lg:p-24 max-w-8xl mx-auto">
@@ -16,9 +21,16 @@ export default function ContactForm() {
 						<input type="text" placeholder="JMÉNO A PŘÍJMENÍ" className="text-center" />
 						<input type="text" placeholder="E-MAIL" className="text-center" />
 						<textarea name="" id="" cols="30" rows="10" placeholder="TEXT" className="text-center"></textarea>
-						<div className="flex items-center gap-4">
-							<input type="checkbox" name="" id="" />
-							<label htmlFor="" className={`${dmSans.className}`}>Souhlasím se <a className="underline hover:no-underline">zpracováním osobních údajů</a></label>
+						<div className="mx-auto flex place-items-center gap-4">
+							<input type="checkbox" name="" id="agree" className="hidden" checked={checked} onChange={() => setChecked(!checked)} />
+							<button className={`bg-hlinoteka-dark border-2 border-hlinoteka-special rounded-full ${checked ? "p-2 bg-hlinoteka-special" : "p-4"}`} onClick={() => setChecked(!checked)} type="button">
+								{checked && (
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+										<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+									</svg>
+								)}
+							</button>
+							<label htmlFor="agree" className={`${dmSans.className}`}>Souhlasím se <a className="underline hover:no-underline" href="#">zpracováním osobních údajů</a></label>
 						</div>
 						<div className="w-auto">
 							<Button type="primary" className="w-full sm:w-auto">Odeslat</Button>
