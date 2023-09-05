@@ -19,17 +19,15 @@ export default function LoadMorePastEvents() {
 	}, [inView])
 
 	function delay(ms) {
-		new Promise((resolve) => setTimeout(resolve, ms))
+		return new Promise((resolve) => setTimeout(resolve, ms));
 	}
 
 	async function loadMorePastEvents() {
-		delay(2000)
-		const newEvents = await fetchEvents(pagesLoaded + 1, "past")
-		setEvents([...events, ...newEvents])
+		await delay(2000)
+		const newEvents = await fetchEvents(pagesLoaded + 1)
+		setEvents((prevEvents) => [...prevEvents, ...newEvents])
 		setPagesLoaded(pagesLoaded + 1)
-		if (newEvents.length === 0) {
-			setLoading(false)
-		}
+		setLoading(newEvents.length > 0)
 	}
 
 	return (

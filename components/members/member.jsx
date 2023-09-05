@@ -48,14 +48,14 @@ export default function Member({ member }) {
 								<div>
 									<span>tel:</span>
 									&nbsp;
-									<span className="text-hlinoteka-inactive">{tel}</span>
+									<span className="text-hlinoteka-inactive"><a href={`tel:${tel.replace(/\s/g, '')}`} className="hover:text-hlinoteka-active transition-color duration-300" target="_blank">{tel}</a></span>
 								</div>
 							)}
 							{email && (
 								<div>
 									<span>email:</span>
 									&nbsp;
-									<span className="text-hlinoteka-inactive">{email}</span>
+									<span className="text-hlinoteka-inactive"><a href={`mailto:${email}`} className="hover:text-hlinoteka-active transition-color duration-300" target="_blank">{email}</a></span>
 								</div>
 							)}
 							<Button type="icon-dark" className="absolute top-4 right-4" onClick={() => { setIsOpen(false) }}>

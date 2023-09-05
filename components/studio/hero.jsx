@@ -2,6 +2,7 @@ import Button from "../button"
 import SpinnerText from "../spinner-text"
 import { dmSans } from "@/components/fonts"
 import HeroGallery from "./hero-swiper"
+import Link from "next/link"
 
 export default function Hero() {
 	return (
@@ -12,7 +13,9 @@ export default function Hero() {
 						<h1 className="text-2xl font-bold leading-tight">Hlinotéka vznikla jako společný projekt umělců pracujících a experimentujících s materiálem.</h1>
 					</div>
 					<div className="mb-4">
-						<Button type="primary">Členové dílny</Button>
+						<Link href="/clenove">
+							<Button type="primary">Členové dílny</Button>
+						</Link>
 					</div>
 					<SpinnerText className="absolute right-0 top-16 lg:top-12 lg:-translate-x-1/3 lg:-translate-y-1/2 scale-75 lg:scale-100 -z-10" />
 				</div>
@@ -25,7 +28,7 @@ export default function Hero() {
 			</div>
 			<div className="px-2 py-8 sm:px-12 sm:pb-12 lg:px-24 lg:py-0 max-w-8xl mx-auto">
 				<div className="lg:pb-24 relative lg:before:absolute lg:before:inset-0 lg:before:-translate-x-full lg:before:z-20 lg:before:bg-gradient-to-l lg:before:from-transparent lg:before:to-hlinoteka-dark lg:before:to-20% lg:after:absolute lg:after:inset-0 lg:after:translate-x-full lg:after:z-20 after:bg-gradient-to-r lg:after:from-transparent lg:after:to-hlinoteka-dark lg:after:to-20%">
-						<HeroGallery />
+					<HeroGallery />
 				</div>
 			</div>
 		</div>

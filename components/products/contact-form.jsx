@@ -21,7 +21,7 @@ export default function ContactForm() {
 						<input type="text" placeholder="JMÉNO A PŘÍJMENÍ" className="text-center" />
 						<input type="text" placeholder="E-MAIL" className="text-center" />
 						<textarea name="" id="" cols="30" rows="10" placeholder="TEXT" className="text-center"></textarea>
-						<div className="mx-auto flex place-items-center gap-4">
+						<div className="flex place-items-center gap-4">
 							<input type="checkbox" name="" id="agree" className="hidden" checked={checked} onChange={() => setChecked(!checked)} />
 							<button className={`bg-hlinoteka-dark border-2 border-hlinoteka-special rounded-full ${checked ? "p-2 bg-hlinoteka-special" : "p-4"}`} onClick={() => setChecked(!checked)} type="button">
 								{checked && (

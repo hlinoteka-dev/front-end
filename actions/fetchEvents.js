@@ -1,10 +1,8 @@
-"use server"
-
-export async function fetchEvents(page, filter) {
-	const apiUrl = `${process.env.URL}/api/events?page=${page}&filter=${filter}`
+export async function fetchEvents(page, filter = "") {
+	const apiUrl = `http://localhost:3000/api/events?page=${page}&filter=${filter}`
 
 	try {
-		const response = await fetch(apiUrl)
+		const response = await fetch(apiUrl, { next: { tags: ['events'] } })
 		const data = await response.json()
 		return data
 	} catch (error) {

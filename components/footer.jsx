@@ -22,10 +22,10 @@ export default function Footer() {
 					</div>
 					<div className="flex flex-col">
 						<h3 className="text-hlinoteka-inactive font-bold">KONTAKT</h3>
-						<span className={`${dmSans.className}`}>hlinoteka@gmail.com</span>
-						<span className={`mt-4 ${dmSans.className}`}>Johana +420 607 440 744</span>
-						<span className={`${dmSans.className}`}>Borek +420 777 022 934</span>
-						<span className={`${dmSans.className}`}>Karo +420 773 680 332</span>
+						<span className={`${dmSans.className}`}><a href="mailto:hlinoteka@gmail.com" className="hover:text-hlinoteka-active transition-color duration-300" target="_blank">hlinoteka@gmail.com</a></span>
+						<span className={`mt-4 ${dmSans.className}`}>Johana <a href="tel:+420607440744" className="hover:text-hlinoteka-active transition-color duration-300" target="_blank">+420 607 440 744</a></span>
+						<span className={`${dmSans.className}`}>Borek <a href="tel:+420777022934" className="hover:text-hlinoteka-active transition-color duration-300" target="_blank">+420 777 022 934</a></span>
+						<span className={`${dmSans.className}`}>Karo <a href="tel:+420773680332" className="hover:text-hlinoteka-active transition-color duration-300" target="_blank">+420 773 680 332</a></span>
 					</div>
 				</div>
 				<div className="mt-8 md:mt-16 py-4 md:py-20 flex flex-col gap-4">

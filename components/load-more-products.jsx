@@ -19,17 +19,15 @@ export default function LoadMoreProducts() {
 	}, [inView])
 
 	function delay(ms) {
-		new Promise((resolve) => setTimeout(resolve, ms))
+		return new Promise((resolve) => setTimeout(resolve, ms));
 	}
 
 	async function loadMoreProducts() {
-		delay(2000)
+		await delay(2000)
 		const newProducts = await fetchProducts(pagesLoaded + 1)
-		setProducts([...products, ...newProducts])
+		setProducts((prevProducts) => [...prevProducts, ...newProducts])
 		setPagesLoaded(pagesLoaded + 1)
-		if (newProducts.length === 0) {
-			setLoading(false)
-		}
+		setLoading(newProducts.length > 0)
 	}
 
 	return (
