@@ -3,6 +3,7 @@ import Button from "../button"
 import ImageOffering from "@/public/images/home-door.jpg"
 
 import { dmSans } from "@/components/fonts"
+import Link from "next/link"
 
 export default function History() {
 	return (
@@ -17,7 +18,9 @@ export default function History() {
 						<p className={`${dmSans.className} font-sans`}>Hlinotéka vznikla jako společný projekt umělců pracujících a experimentujících s materiálem.</p>
 					</div>
 					<div>
-						<Button type="primary" className="w-full sm:w-auto">Zjistit více</Button>
+						<Link href="/o-dilne">
+							<Button type="primary" className="w-full sm:w-auto">Zjistit více</Button>
+						</Link>
 					</div>
 				</div>
 			</div>

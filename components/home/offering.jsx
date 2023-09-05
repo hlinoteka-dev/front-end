@@ -3,6 +3,7 @@ import Button from "../button"
 import ImageOffering from "@/public/images/home-offering.jpg"
 
 import { dmSans } from "@/components/fonts"
+import Link from "next/link"
 
 export default function Offering() {
 	return (
@@ -14,7 +15,9 @@ export default function Offering() {
 						<p className={`${dmSans.className} font-sans`}>Kurzy točení na kruhu, kurzy modelování z ruky<br />a openstudio určené pro individuální tvorbu. Můžete také využít možnost výpalů v naší elektrické peci.</p>
 					</div>
 					<div>
-						<Button type="primary" className="w-full sm:w-auto">Zjistit více</Button>
+						<Link href="/sluzby">
+							<Button type="primary" className="w-full sm:w-auto">Zjistit více</Button>
+						</Link>
 					</div>
 				</div>
 				<div className="order-1 lg:order-2">

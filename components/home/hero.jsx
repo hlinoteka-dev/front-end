@@ -2,6 +2,7 @@ import Image from "next/image"
 import Button from "../button"
 import HeroImage from "@/public/images/home-hero-main.jpg"
 import SpinnerText from "../spinner-text"
+import Link from "next/link"
 
 export default function Hero() {
 	return (
@@ -12,10 +13,14 @@ export default function Hero() {
 						<h1 className="text-xl md:text-2xl font-bold leading-tight">Hlinotéka je nezávislá keramická dílna v pražských Holešovicích.</h1>
 					</div>
 					<div className="">
-						<Button type="primary" className="w-full sm:w-auto">Kurzy a Openstudio</Button>
+						<Link href="/sluzby">
+							<Button type="primary" className="w-full sm:w-auto">Kurzy a Openstudio</Button>
+						</Link>
 					</div>
 					<div className="">
-						<Button type="secondary" className="w-full sm:w-auto">Produkty</Button>
+						<Link href="/produkty">
+							<Button type="secondary" className="w-full sm:w-auto">Produkty</Button>
+						</Link>
 					</div>
 					<SpinnerText className="absolute right-0 bottom-12 lg:top-12 translate-x-1/3 lg:-translate-x-1/3 lg:-translate-y-1/3 scale-75 z-5 lg:-z-10" />
 				</div>

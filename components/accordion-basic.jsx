@@ -1,15 +1,18 @@
 "use client"
 
 import { dmSans } from '@/components/fonts'
+import { useState } from 'react'
 
-export default function AccordionBasic({ children, title,  className, open, onClick }) {
+export default function AccordionBasic({ children, title,  className }) {
+
+	const [open, setOpen] = useState(false)
 
 	return (
 		<div className={`px-5 py-4 rounded-sm ${className}`}>
 			<button
 				className={`flex items-center w-full group ${open && 'mb-6'}`}
 				aria-expanded={open}
-				onClick={onClick}
+				onClick={() => { setOpen(!open) }}
 			>
 				<div
 					className="p-[8px] bg-hlinoteka-gray hover:bg-hlinoteka-active text-hlinoteka-active hover:text-hlinoteka-dark text-xs font-bold uppercase rounded-3xl transition-colors duration-300 ease-in-out">

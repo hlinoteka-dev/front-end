@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Button from "../button"
 import { dmSans } from "@/components/fonts"
 
@@ -13,7 +14,7 @@ export default async function Event({ event }) {
 	return (
 		<>
 			<div>
-				<img src={event.images[0].url} alt={event.name} className="w-full object-cover h-48 md:h-96" />
+				<Image src={event.images[0].url} width={860} height={484} alt={event.name} className="w-full object-cover h-48 md:h-96" />
 			</div>
 			<div className="p-8 flex flex-col bg-hlinoteka-gray h-96">
 				<div className="text-2xl font-bold text-hlinoteka-active">
@@ -29,7 +30,7 @@ export default async function Event({ event }) {
 					<p className={`${dmSans.className} font-sans pr-12`} dangerouslySetInnerHTML={{ __html: event.description }} />
 				</div>
 				<div className="mt-4 sm:flex sm:justify-end">
-					<a href={event.url} target="_blank"><Button type="tertiary" className="w-full sm:w-auto">FB Event</Button></a>
+					<a href={event.url || "#"} target="_blank"><Button type="tertiary" className="w-full sm:w-auto">FB Event</Button></a>
 				</div>
 			</div>
 		</>

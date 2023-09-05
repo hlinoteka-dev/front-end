@@ -1,17 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import AccordionBasic from "../accordion-basic"
 import Button from "../button"
 import ServiceSwiper from "./service-swiper"
 import ServiceSwiperButtons from "./service-swiper-buttons"
 
 export default function Accordion() {
-	const [openAccordion, setOpenAccordion] = useState(null)
-
-	const handleAccordionClick = (index) => {
-		setOpenAccordion(index === openAccordion ? null : index)
-	}
 
 	const accordions = [
 		{
@@ -162,12 +156,12 @@ export default function Accordion() {
 	]
 
 	return (
-		<div>
+		<div name="services">
 			<div className="relative">
 				<div className="py-8 lg:px-24 lg:pt-20 lg:pb-28 max-w-8xl mx-auto">
 					<div className="">
 						{accordions.map((accordion, index) => (
-							<AccordionBasic title={accordion.title} open={openAccordion === index} onClick={() => handleAccordionClick(index)} className={accordion.className}>
+							<AccordionBasic title={accordion.title} className={accordion.className} key={index}>
 								<div className="flex flex-col">
 									<div className="mb-4 w-full flex justify-between items-center">
 										{(accordion.subtitle1 || accordion.subtitle2) && (

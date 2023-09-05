@@ -20,7 +20,7 @@ export default function PastEventsSwiper({ className, index, images }) {
 			},
 		})
 		
-	}, [])
+	}, [index])
 
 	return (
 		<>

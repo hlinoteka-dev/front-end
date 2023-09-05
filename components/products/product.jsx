@@ -3,6 +3,7 @@
 import Button from "../button"
 import Image from "next/image"
 import { dmSans } from "@/components/fonts"
+import Link from "next/link"
 
 export default function Product({ product }) {
 
@@ -20,7 +21,9 @@ export default function Product({ product }) {
 				<span>{size}</span>
 			</div>
 			<div>
-				<Button type="secondary">Mám zájem</Button>
+				<Link href="#contact-form">
+					<Button type="secondary">Mám zájem</Button>
+				</Link>
 			</div>
 		</div>
 	)

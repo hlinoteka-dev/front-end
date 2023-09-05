@@ -4,7 +4,7 @@ import { dmSans } from "@/components/fonts"
 
 export default function ContactForm() {
 	return (
-		<div className="border-b border-b-hlinoteka-special">
+		<div className="border-b border-b-hlinoteka-special" name="contact-form">
 			<div className="px-8 py-12 lg:p-24 max-w-8xl mx-auto">
 				<div className="flex flex-col justify-center text-center gap-6">
 					<h2 className="text-2xl font-bold leading-tight">Nezávazná poptávka</h2>

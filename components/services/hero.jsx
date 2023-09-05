@@ -3,6 +3,7 @@ import Button from "../button"
 import HeroImage from "@/public/images/services-hero-main.jpg"
 import SpinnerText from "../spinner-text"
 import { dmSans } from "@/components/fonts"
+import Link from "next/link"
 
 export default function Hero() {
 	return (
@@ -16,7 +17,9 @@ export default function Hero() {
 						<p className="leading-6">Nabízíme lekce točení na kruhu, kurz modelování z ruky a openstudio určené pro individuální tvorbu. Můžete také využít možnost výpalů v naší elektrické peci. Ve vybavení máme tři hrnčířské kruhy, dva velké modelovací stoly a dvě pece o obsahu 120l a 60l.</p>
 					</div>
 					<div className="">
-						<Button type="primary" className="w-full sm:w-auto">Seznam služeb</Button>
+						<Link href="#services">
+							<Button type="primary" className="w-full sm:w-auto">Seznam služeb</Button>
+						</Link>
 					</div>
 				</div>
 				<div className="order-1 lg:order-2">

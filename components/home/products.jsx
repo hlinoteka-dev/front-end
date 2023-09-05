@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Button from "../button"
 import ProductsSwiper from "./products-swiper"
 import { fetchProducts } from "@/actions/fetchProducts"
@@ -32,7 +33,9 @@ export default async function Products() {
 					<ProductsSwiper products={products} />
 				</div>
 				<div className="mt-6 w-full text-center">
-					<Button type="primary" className="w-full sm:w-auto">Zobrazit všechny</Button>
+					<Link href="/produkty">
+						<Button type="primary" className="w-full sm:w-auto">Zobrazit všechny</Button>
+					</Link>
 				</div>
 			</div>
 		</div>

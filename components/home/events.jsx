@@ -1,5 +1,7 @@
+import Image from "next/image"
 import Button from "../button"
 import { dmSans } from "@/components/fonts"
+import Link from "next/link"
 
 async function getEvent() {
 	const res = await fetch(`${process.env.URL}/api/events?filter=active&limit=1`)
@@ -30,7 +32,7 @@ export default async function Event() {
 			<div className="px-2 py-8 sm:p-12 lg:px-24 lg:py-20 max-w-8xl mx-auto">
 				<div className="md:grid md:grid-cols-2 md:max-h-96 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
 					<div>
-						<img src={event.images[0].url} alt={event.name} className="w-full object-cover h-48 md:h-96" />
+						<Image src={event.images[0].url} width={860} height={484} alt={event.name} className="w-full object-cover h-48 md:h-96" />
 					</div>
 					<div className="p-8 flex flex-col bg-hlinoteka-gray h-96">
 						<div className="text-2xl font-bold text-hlinoteka-active">
@@ -46,12 +48,14 @@ export default async function Event() {
 							<p className={`${dmSans.className} font-sans pr-12`} dangerouslySetInnerHTML={{ __html: event.description }} />
 						</div>
 						<div className="mt-4 sm:flex sm:justify-end w-full">
-							<a href={event.url} target="_blank"><Button type="tertiary" className="w-full sm:w-auto">FB Event</Button></a>
+							<a href={event.url || "#"} target="_blank"><Button type="tertiary" className="w-full sm:w-auto">FB Event</Button></a>
 						</div>
 					</div>
 				</div>
 				<div className="mt-4 sm:mt-8 w-full text-center">
-					<Button type="secondary" className="w-full sm:w-auto">Další události</Button>
+					<Link href="/udalosti">
+						<Button type="secondary" className="w-full sm:w-auto">Další události</Button>
+					</Link>
 				</div>
 			</div>
 		</div>
