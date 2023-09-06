@@ -1,5 +1,4 @@
 "use server"
-
 export async function fetchProducts(page, filter) {
 	const apiUrl = `http://localhost:3000/api/products?page=${page}&filter=${filter}`
 

@@ -1,3 +1,4 @@
+"use server"
 export async function fetchEvents(page, filter) {
 	const apiUrl = `http://localhost:3000/api/events?page=${page}&filter=${filter}`
 
