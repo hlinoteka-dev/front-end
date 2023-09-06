@@ -13,7 +13,7 @@ export default function Clenove() {
 		<main className="w-full">
 			<Hero />
 			<History />
-			<Products />
+			{/* <Products /> */}
 			<ContactForm />
 			<Footer />
 		</main>

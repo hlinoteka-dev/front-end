@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <main className="w-full">
 			<Hero />
-			<Events />
+			{/* <Events /> */}
 			<Offering />
-			<Products />
+			{/* <Products /> */}
 			<History />
 			<ContactForm />
 			<Footer />

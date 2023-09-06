@@ -9,7 +9,7 @@ export const metadata = {
 export default function Produkty() {
 	return (
 		<main className="w-full">
-			<Products />
+			{/* <Products /> */}
 			<ContactForm />
 			<Footer />
 		</main>

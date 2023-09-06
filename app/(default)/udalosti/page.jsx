@@ -10,8 +10,8 @@ export const metadata = {
 export default function Udalosti() {
 	return (
 		<main className="w-full">
-			<Events />
-			<PastEvents />
+			{/* <Events /> */}
+			{/* <PastEvents /> */}
 			<ContactForm />
 			<Footer />
 		</main>
