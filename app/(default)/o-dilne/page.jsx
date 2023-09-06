@@ -13,7 +13,7 @@ export default function O_dilne() {
 		<main className="w-full">
 			<Hero />
 			<Offering />
-			{/* <Products /> */}
+			<Products />
 			<ContactForm />
 			<Footer />
 		</main>

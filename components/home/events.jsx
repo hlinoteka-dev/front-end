@@ -32,7 +32,7 @@ export default async function Event() {
 			<div className="px-2 py-8 sm:p-12 lg:px-24 lg:py-20 max-w-8xl mx-auto">
 				<div className="md:grid md:grid-cols-2 md:max-h-96 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
 					<div>
-						<Image src={event.images[0].url} width={860} height={484} alt={event.name} className="w-full object-cover h-48 md:h-96" />
+						<img src={event.images[0].url} width={860} height={484} alt={event.name} className="w-full object-cover h-48 md:h-96" />
 					</div>
 					<div className="p-8 flex flex-col bg-hlinoteka-gray h-96">
 						<div className="text-2xl font-bold text-hlinoteka-active">

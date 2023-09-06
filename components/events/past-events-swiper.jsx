@@ -31,7 +31,7 @@ export default function PastEventsSwiper({ className, index, images }) {
 			<div className={`testimonials-carousel-${index} swiper-container`}>
 				<div className="swiper-wrapper">
 					{images.map((image, index) => (
-						<div className="swiper-slide" key={index}><Image src={`${image.url}`} width={365} height={430} alt='Hlinotéka' className="w-auto h-80 object-cover rounded-2xl" /></div>
+						<div className="swiper-slide" key={index}><img src={`${image.url}`} width={365} height={430} alt='Hlinotéka' className="w-auto h-80 object-cover rounded-2xl" /></div>
 					))}
 				</div>
 			</div>
