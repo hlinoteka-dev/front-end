@@ -4,7 +4,7 @@ import { dmSans } from "@/components/fonts"
 import Link from "next/link"
 
 async function getEvent() {
-	const res = await fetch("http://localhost:3000/api/events?filter=active&limit=1", { next: { tags: ['products'] } }, { cache: 'no-store' })
+	const res = await fetch("http://localhost:3000/api/events?filter=active&limit=1", { next: { tags: ['events'] }, cache: 'no-store' })
 
 	if (!res.ok) {
 		throw new Error('Failed to fetch data')
