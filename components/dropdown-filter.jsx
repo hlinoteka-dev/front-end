@@ -25,9 +25,9 @@ export default function Select({ onOptionChange }) {
 		}
 	]
 
-	useEffect(() => {
-		onOptionChange(options[selected].key)
-	}, [selected])
+	// useEffect(() => {
+	// 	onOptionChange(options[selected].key)
+	// }, [selected])
 
 	return (
 		<Menu as="div" className="relative inline-flex">
