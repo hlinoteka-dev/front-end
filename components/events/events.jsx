@@ -3,7 +3,7 @@ import Event from "./event"
 import { dmSans } from "@/components/fonts"
 
 async function getEvent() {
-	const res = await fetch(`${process.env.URL}/api/events?filter=active`, { next: { tags: ['events'] } })
+	const res = await fetch("http://localhost:3000/api/events?filter=active", { next: { tags: ['events'] } })
 
 	if (!res.ok) {
 		throw new Error('Failed to fetch data')
