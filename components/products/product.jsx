@@ -15,7 +15,7 @@ export default function Product({ product }) {
 	return (
 		<div className="flex flex-col gap-4">
 			<div className="relative h-[430px] border-2 border-hlinoteka-dark hover:border-hlinoteka-special overflow-hidden rounded-2xl shadow-2xl shadow-black/30 cursor-pointer">
-				<img src={images[0].url} width={365} height={430} className="w-[100%] h-[100%] object-cover" alt={name} onClick={() => { setIsOpen(true) }} />
+				<Image src={images[0].url} width={365} height={430} className="w-[100%] h-[100%] object-cover" alt={name} onClick={() => { setIsOpen(true) }} />
 				{newProduct && <span className="absolute top-2 right-2 px-4 py-1.5 text-xs bg-hlinoteka-special text-hlinoteka-light rounded-2xl">NOVINKA</span>}
 			</div>
 			<div className={`flex flex-col ${dmSans.className}`}>

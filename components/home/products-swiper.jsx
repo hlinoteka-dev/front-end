@@ -30,7 +30,7 @@ export default function ProductsSwiper({ products, className }) {
 			<div className="testimonials-carousel swiper-container">
 				<div className="swiper-wrapper">
 					{products.map((product, index) => (
-						<div className="swiper-slide" key={index}><img src={product.images[0].url} width={365} height={430} alt={product.name} className="w-[365px] h-[430px] object-cover rounded-2xl" /></div>
+						<div className="swiper-slide" key={index}><Image src={product.images[0].url} width={365} height={430} alt={product.name} className="w-[365px] h-[430px] object-cover rounded-2xl" /></div>
 					))}
 				</div>
 			</div>

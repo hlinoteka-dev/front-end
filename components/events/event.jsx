@@ -14,7 +14,7 @@ export default async function Event({ event }) {
 	return (
 		<>
 			<div>
-				<img src={event.images[0].url} width={860} height={484} alt={event.name} className="w-full object-cover h-48 md:h-96" />
+				<Image src={event.images[0].url} width={860} height={484} alt={event.name} className="w-full object-cover h-48 md:h-96" />
 			</div>
 			<div className="p-8 flex flex-col bg-hlinoteka-gray h-96">
 				<div className="text-2xl font-bold text-hlinoteka-active">
