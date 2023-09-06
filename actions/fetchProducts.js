@@ -1,5 +1,5 @@
-export async function fetchProducts(page, filter = "") {
-	const apiUrl = `http://localhost:3000/api/products?page=${page}&filter=${filter}`
+export async function fetchProducts(page, filter) {
+	const apiUrl = `http://164.92.172.216/api/products?page=${page}&filter=${filter}`
 
 	try {
 		const response = await fetch(apiUrl, { next: { tags: ['products'] } })

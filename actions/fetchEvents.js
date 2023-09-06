@@ -1,5 +1,5 @@
-export async function fetchEvents(page, filter = "") {
-	const apiUrl = `http://localhost:3000/api/events?page=${page}&filter=${filter}`
+export async function fetchEvents(page, filter) {
+	const apiUrl = `http://164.92.172.216/api/events?page=${page}&filter=${filter}`
 
 	try {
 		const response = await fetch(apiUrl, { next: { tags: ['events'] } })
