@@ -6,7 +6,7 @@ import { fetchProducts } from "@/actions/fetchProducts"
 import ProductsContainer from "@/components/products/products-container"
 import Spinner from "./spinner"
 
-export default function LoadMoreProducts() {
+export default function LoadMoreProducts({ query }) {
 	const [products, setProducts] = useState([])
 	const [pagesLoaded, setPagesLoaded] = useState(1)
 	const [loading, setLoading] = useState(true)
@@ -24,7 +24,7 @@ export default function LoadMoreProducts() {
 
 	async function loadMoreProducts() {
 		await delay(2000)
-		const newProducts = await fetchProducts(pagesLoaded + 1)
+		const newProducts = await fetchProducts(pagesLoaded + 1, query)
 		setProducts((prevProducts) => [...prevProducts, ...newProducts])
 		setPagesLoaded(pagesLoaded + 1)
 		setLoading(newProducts.length > 0)

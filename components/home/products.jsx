@@ -5,7 +5,7 @@ import { fetchProducts } from "@/actions/fetchProducts"
 
 export default async function Products() {
 
-	const products = await fetchProducts(1, "random")
+	const products = await fetchProducts(1, "&filter=random")
 
 	if (products === null) {
 		return <></>

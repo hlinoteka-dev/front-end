@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { revalidateTag } from 'next/cache'
 
-// e.g a webhook to `your-website.com/api/revalidate?tag=collection&secret=<token>`
+// e.g a webhook to revalidate: `/api/revalidate?tag=products&secret=<token>`
 export async function POST(request) {
 	const secret = request.nextUrl.searchParams.get('secret')
 	const tag = request.nextUrl.searchParams.get('tag')

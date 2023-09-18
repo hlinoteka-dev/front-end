@@ -15,7 +15,7 @@ export default function ProductsSwiper({ products, className }) {
 				1024: {
 					slidesPerView: 3.4,
 				}
-			},			
+			},
 			grabCursor: true,
 			modules: [Navigation],
 			navigation: {
@@ -30,7 +30,13 @@ export default function ProductsSwiper({ products, className }) {
 			<div className="testimonials-carousel swiper-container">
 				<div className="swiper-wrapper">
 					{products.map((product, index) => (
-						<div className="swiper-slide" key={index}><Image src={product.images[0].url} width={365} height={430} alt={product.name} className="w-[365px] h-[430px] object-cover rounded-2xl" /></div>
+						<div className="swiper-slide" key={index}>
+							<Image
+								src={product.images && product.images.length > 0 ? product.images[0].url : "/images/placeholder.png"}
+								width={365} height={430}
+								alt={product.name}
+								className="w-[365px] h-[430px] object-cover rounded-2xl" />
+						</div>
 					))}
 				</div>
 			</div>

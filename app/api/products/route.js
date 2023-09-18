@@ -1,4 +1,4 @@
-import { Product } from '@/models/product'
+import { Product } from '@/models/Product'
 import { mongooseConnect } from "@/lib/mongoose"
 
 export async function GET(request) {
@@ -7,14 +7,23 @@ export async function GET(request) {
 	const sortBy = url.searchParams.get('sortBy')
 	const page = url.searchParams.get('page')
 	const filter = url.searchParams.get('filter')
+	const tag = url.searchParams.get('tag')
 	let products
 
 	let query = Product.find()
 
-	const perPage = 6
+	const perPage = 12
 
 	if (sortBy === 'author') {
-		query = query.sort({ name: -1 })
+		query = query.sort({ author: 1 })
+	}
+
+	if (sortBy === 'top') {
+		query = query.sort({ topProduct: -1 })
+	}
+
+	if (tag) {
+		query = query.where('productTags').in([tag])
 	}
 
 	if (filter === 'random') {

@@ -11,8 +11,9 @@ export default function Footer() {
 					<div className="flex flex-col">
 						<h3 className="text-hlinoteka-inactive font-bold">ADRESA</h3>
 						<span className={`${dmSans.className}`}>Hlinotéka Ceramic Studio</span>
-						<span className={`${dmSans.className}`}>Šternberkova 22</span>
-						<span className={`${dmSans.className}`}>107 00 Praha 7, ČR</span>
+						<a href="https://goo.gl/maps/EEi8EKvSaT5xUuKRA" className="hover:text-hlinoteka-active transition-color duration-300" target="_blank">
+						<span className={`${dmSans.className}`}>Šternberkova 22<br />107 00 Praha 7, ČR</span>
+						</a>
 						<SocialIcons />
 					</div>
 					<div className="flex flex-col">

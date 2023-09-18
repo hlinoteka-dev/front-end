@@ -16,10 +16,9 @@ export async function POST(request) {
 			`<p>${message}</p>`
 		)
 
-		return new Response(JSON.stringify({ message: "Email sent" }))
+		return new Response(JSON.stringify({ status: "success" }), { status: 200 })
 	} catch (e) {
-		console.log(e)
-		return new Response(JSON.stringify({ message: "Error sending email" }), {
+		return new Response(JSON.stringify({ status: "fail" }), {
 			status: 500,
 		})
 	}

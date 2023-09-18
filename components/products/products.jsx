@@ -3,9 +3,18 @@ import Select from "../dropdown-filter"
 import { fetchProducts } from "@/actions/fetchProducts"
 import LoadMoreProducts from "@/components/load-more-products"
 import ProductsContainer from "./products-container"
-export default async function Products() {
+export default async function Products({ params }) {
 
-	const products = await fetchProducts(1)
+	let queryString = '';
+	for (const key in params) {
+		if (params.hasOwnProperty(key)) {
+			queryString += `&${key}=${params[key]}`;
+		}
+	}
+
+	queryString = queryString.slice(1);
+
+	const products = await fetchProducts(1, queryString)
 
 	if (products === null) {
 		return <></>
@@ -16,11 +25,11 @@ export default async function Products() {
 			<div className="px-2 py-8 sm:p-12 lg:px-24 lg:pt-20 lg:pb-28 flex flex-col max-w-8xl mx-auto">
 				<div className="mb-8">
 					<span className="mr-4">Filter produktů</span>
-					<Select />
+					<Select query={params} />
 				</div>
 				<ProductsContainer products={products} />
 				<div className="mt-16">
-					<LoadMoreProducts />
+					<LoadMoreProducts query={queryString} />
 				</div>
 			</div>
 		</div>

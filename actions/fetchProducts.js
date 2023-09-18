@@ -1,6 +1,6 @@
 "use server"
-export async function fetchProducts(page, filter) {
-	const apiUrl = `http://localhost:3000/api/products?page=${page}&filter=${filter}`
+export async function fetchProducts(page, params) {
+	const apiUrl = `http://localhost:3000/api/products?${params ? `&${params}&` : ''}page=${page}`
 
 	try {
 		const response = await fetch(apiUrl, { next: { tags: ['products'] }, cache: 'force-cache' })

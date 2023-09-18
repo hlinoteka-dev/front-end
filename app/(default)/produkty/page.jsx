@@ -2,7 +2,8 @@ import ContactForm from "@/components/products/contact-form"
 import Products from "@/components/products/products"
 import Footer from "@/components/footer"
 
-import { layoutTester } from "@/actions/layoutTester"
+// TO DO: loading state
+// import { layoutTester } from "@/actions/layoutTester"
 
 export const metadata = {
 	title: 'Produkty - Hlinoteka',
@@ -10,11 +11,12 @@ export const metadata = {
 }
 export default async function Produkty(props) {
 
-	await layoutTester(props.searchParams)
+	// TO DO: loading state
+	// await layoutTester(props.searchParams)
 
 	return (
 		<main className="w-full">
-			<Products />
+			<Products params={props.searchParams} />
 			<ContactForm />
 			<Footer />
 		</main>
