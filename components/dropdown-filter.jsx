@@ -7,7 +7,7 @@ import { fetchTags } from '@/actions/fetchTags'
 
 export default function Select({ query }) {
 
-	const [selectedOption, setSelectedOption] = useState(query.sortBy === "topProduct" ? 0 : query.sortBy === "author" ? 1 : 2)
+	const [selectedOption, setSelectedOption] = useState(query.sortBy === "topProduct" ? 0 : query.sortBy === "author" ? 1 : query.sortBy === "type" ? 2 : 0)
 	const [tags, setTags] = useState([])
 	const [selectedTag, setSelectedTag] = useState(null)
 
