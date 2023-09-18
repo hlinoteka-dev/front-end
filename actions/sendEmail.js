@@ -8,7 +8,7 @@ const oAuth2Client = new google.auth.OAuth2(
 )
 
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN })
-const sendEmail = async (fromEmail, email, subject, text) => {
+const sendEmail = async (email, myEmail, subject, message) => {
 	try {
 		const accessToken = await oAuth2Client.getAccessToken()
 
@@ -24,11 +24,12 @@ const sendEmail = async (fromEmail, email, subject, text) => {
 			},
 		})
 		await transporter.sendMail({
-			from: fromEmail,
-			to: email,
-			attachDataUrls: true,
+			from: myEmail,
+			to: myEmail,
+			replyTo: email,
 			subject: subject,
-			html: text,
+			html: message,
+			attachDataUrls: true,
 		})
 	} catch (error) {
 		console.log(error)

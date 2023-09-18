@@ -1,30 +1,26 @@
-import sendEmail from "@/actions/sendEmail";
-//Connect with database
+import sendEmail from "@/actions/sendEmail"
+
 export async function POST(request) {
 	try {
-		const errors = [];
-		const { title, description, email, fullName } = await request.json();
-		// If are errors
+		const errors = []
+		const { fullName, email, message } = await request.json()
+
 		if (errors.length > 0) {
-			return new Response(JSON.stringify(errors), { status: 403 });
+			return new Response(JSON.stringify(errors), { status: 403 })
 		}
 
-		const message = `
-      <h3>Съобщение от ${fullName}, с и-мейл ${email} - ${title}</h3>
-      <p>${description}</p>
-      `;
-		// Sending email
 		await sendEmail(
+			email,
 			process.env.EMAIL_SEND,
-			process.env.EMAIL_SEND,
-			"Им",
-			message
-		);
-		// Успешно изпратено съобщение!
+			`HLINOTEKA.CZ - Nová zpráva od ${fullName} (${email})`,
+			`<p>${message}</p>`
+		)
 
-		return new Response(JSON.stringify({ message: "Успешно изпратено!" }));
+		return new Response(JSON.stringify({ message: "Email sent" }))
 	} catch (e) {
-		console.log(e);
-		await response.json({ error: e.message });
+		console.log(e)
+		return new Response(JSON.stringify({ message: "Error sending email" }), {
+			status: 500,
+		})
 	}
 }
