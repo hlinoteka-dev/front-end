@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'hlinoteka-dev.s3.eu-west-3.amazonaws.com',
+        hostname: 'hlinoteka.s3.eu-central-1.amazonaws.com',
         port: '',
         pathname: '**',
       },
