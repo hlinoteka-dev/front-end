@@ -35,9 +35,9 @@ export default function Select({ query }) {
 	useEffect(() => {
 		fetchTags().then((tags) => {
 			if (query.tag) {
-				setSelectedTag(query.tag)
+				setSelectedTag({ _id: query.tag, name: tags.length > 0 ? tags.find((tag) => tag._id === query.tag).name : 'Všechny' })
 			} else {
-				setSelectedTag("Všechny")
+				setSelectedTag({ _id: "", name: 'Všechny' })
 			}
 			setTags([{
 				_id: "",
@@ -47,7 +47,7 @@ export default function Select({ query }) {
 		})
 		fetchAuthors().then((authors) => {
 			if (query.author) {
-				setSelectedAuthor(query.author)
+				setSelectedAuthor( () => authors.length > 0 ? authors.find((author) => author === query.author) : 'Všichni')
 			} else {
 				setSelectedAuthor("Všichni")
 			}
@@ -149,7 +149,7 @@ export default function Select({ query }) {
 						<>
 							<Menu.Button className="px-4 py-2 btn flex justify-between items-center min-w-[18rem] bg-hlinoteka-gray text-hlinoteka-light hover:text-hlinoteka-active rounded-2xl" aria-label="Select date range">
 								<span className="flex items">
-									<span className="uppercase">{selectedTag ? tags.find((tag) => tag._id === selectedTag).name : 'Typ'}</span>
+									<span className="uppercase">{selectedTag ? tags.find((tag) => tag._id === selectedTag._id).name : 'Všechny'}</span>
 								</span>
 								<svg className="shrink-0 ml-1 fill-current text-hlinoteka-light" width="11" height="7" viewBox="0 0 11 7">
 									<path d="M5.4 6.8L0 1.4 1.4 0l4 4 4-4 1.4 1.4z" />
@@ -170,10 +170,10 @@ export default function Select({ query }) {
 											{({ active }) => (
 												<Link
 													href={`/produkty?sortBy=type&tag=${tag._id}`}
-													className={`flex items-center w-full py-1 px-3 cursor-pointer ${active ? 'bg-hlinoteka-inactive' : ''} ${tag._id === selectedTag && 'text-hlinoteka-active'}`}
-													onClick={() => { setSelectedTag(tag._id) }}
+													className={`flex items-center w-full py-1 px-3 cursor-pointer ${active ? 'bg-hlinoteka-inactive' : ''} ${tag._id === selectedTag._id && 'text-hlinoteka-active'}`}
+													onClick={() => { setSelectedTag(tag) }}
 												>
-													<svg className={`shrink-0 mr-2 fill-current text-hlinoteka-active ${tag._id !== selectedTag && 'invisible'}`} width="12" height="9" viewBox="0 0 12 9">
+													<svg className={`shrink-0 mr-2 fill-current text-hlinoteka-active ${tag._id !== selectedTag._id && 'invisible'}`} width="12" height="9" viewBox="0 0 12 9">
 														<path d="M10.28.28L3.989 6.575 1.695 4.28A1 1 0 00.28 5.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28.28z" />
 													</svg>
 													<span>{tag.name}</span>
