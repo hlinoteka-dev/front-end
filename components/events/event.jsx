@@ -30,7 +30,7 @@ export default async function Event({ event }) {
 					<p className={`${dmSans.className} font-sans pr-12`} dangerouslySetInnerHTML={{ __html: event.description }} />
 				</div>
 				<div className="mt-4 sm:flex sm:justify-end">
-					<a href={event.url || "#"} target="_blank"><Button type="tertiary" className="w-full sm:w-auto">FB Event</Button></a>
+					<a href={event.url || "#"} target="_blank"><Button type="tertiary" className="w-full sm:w-auto text-xs">FB Event</Button></a>
 				</div>
 			</div>
 		</>

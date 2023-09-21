@@ -4,6 +4,7 @@ import AccordionBasic from "../accordion-basic"
 import Button from "../button"
 import ServiceSwiper from "./service-swiper"
 import ServiceSwiperButtons from "./service-swiper-buttons"
+import { dmSans } from '@/components/fonts'
 
 export default function Accordion() {
 
@@ -163,7 +164,7 @@ export default function Accordion() {
 						{accordions.map((accordion, index) => (
 							<AccordionBasic title={accordion.title} className={accordion.className} key={index}>
 								<div className="flex flex-col">
-									<div className="mb-4 w-full flex justify-between items-center">
+									<div className={`mb-4 w-full flex justify-between items-center ${dmSans.className}`}>
 										{(accordion.subtitle1 || accordion.subtitle2) && (
 											<div className="flex flex-col">
 												{accordion.subtitle1 && (<span className="text-hlinoteka-inactive">{accordion.subtitle1}</span>)}
@@ -175,14 +176,16 @@ export default function Accordion() {
 									<div className="mb-8 relative before:absolute before:inset-0 before:-translate-x-full before:z-20 before:bg-gradient-to-l before:from-transparent before:to-hlinoteka-dark before:to-20% after:absolute after:inset-0 after:translate-x-full after:z-20 after:bg-gradient-to-r after:from-transparent after:to-hlinoteka-dark after:to-20%">
 										<ServiceSwiper images={accordion.images} index={index} />
 									</div>
-									<div className="lg:mb-8 grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-4">
+									<div className={`lg:mb-8 grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-4 ${dmSans.className}`}>
 										<div className="space-y-4" dangerouslySetInnerHTML={{ __html: accordion.textA1 + accordion.textA2 + accordion.textA3 }}></div>
 										<div className="space-y-4" dangerouslySetInnerHTML={{ __html: accordion.textB1 + accordion.textB2 + accordion.textB3 }}></div>
 									</div>
 									<div>
-										<a href="https://hlinoteka.reenio.cz/" target="_blank" rel="noopener noreferrer">
-											<Button type="secondary" className="text-xl md:text-md px-12 w-full md:w-auto">{accordion.button}</Button>
-										</a>
+										<Button type="secondary" className="text-xs px-12 w-full md:w-auto">
+											<a href="https://hlinoteka.reenio.cz/" target="_blank" rel="noopener noreferrer">
+												{accordion.button}
+											</a>
+										</Button>
 									</div>
 								</div>
 							</AccordionBasic>

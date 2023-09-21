@@ -34,7 +34,7 @@ export default async function Products() {
 				</div>
 				<div className="mt-6 w-full text-center">
 					<Link href="/produkty">
-						<Button type="primary" className="w-full sm:w-auto">Zobrazit všechny</Button>
+						<Button type="primary" className="w-full sm:w-auto text-xs">Zobrazit všechny</Button>
 					</Link>
 				</div>
 			</div>

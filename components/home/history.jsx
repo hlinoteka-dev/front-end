@@ -19,7 +19,7 @@ export default function History() {
 					</div>
 					<div>
 						<Link href="/o-dilne">
-							<Button type="primary" className="w-full sm:w-auto">Zjistit více</Button>
+							<Button type="primary" className="w-full sm:w-auto text-xs">Zjistit více</Button>
 						</Link>
 					</div>
 				</div>

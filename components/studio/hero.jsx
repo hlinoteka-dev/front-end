@@ -14,7 +14,7 @@ export default function Hero() {
 					</div>
 					<div className="mb-4">
 						<Link href="/clenove">
-							<Button type="primary">Členové dílny</Button>
+							<Button type="primary" className="text-xs">Členové dílny</Button>
 						</Link>
 					</div>
 					<SpinnerText className="absolute right-0 top-16 lg:top-12 lg:-translate-x-1/3 lg:-translate-y-1/2 scale-75 lg:scale-100 -z-10" />

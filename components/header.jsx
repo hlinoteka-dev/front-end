@@ -43,7 +43,7 @@ export default function Header() {
 					</div>
 					<div className="my-auto">
 						<a href="https://hlinoteka.reenio.cz/" target="_blank" rel="noopener noreferrer">
-							<Button>REZERVACE</Button>
+							<Button className="text-xs">REZERVACE</Button>
 						</a>
 					</div>
 				</div>
@@ -57,18 +57,18 @@ export default function Header() {
 					</Link>
 					<div className="my-auto">
 						<a href="https://hlinoteka.reenio.cz/" target="_blank" rel="noopener noreferrer">
-							<Button href="/">REZERVACE</Button>
+							<Button className="text-xs">REZERVACE</Button>
 						</a>
 					</div>
 					<div className="my-auto w-[120px] text-right">
 						{open ? (
-							<Button href="/" type="icon-mobile" onClick={() => setOpen(false)}>
+							<Button type="icon-mobile" onClick={() => setOpen(false)} className="text-md">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
 								</svg>
 							</Button>
 						) : (
-							<Button href="/" type="icon-mobile" onClick={() => setOpen(true)}>
+							<Button type="icon-mobile" onClick={() => setOpen(true)} className="text-md">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
 								</svg>

@@ -7,7 +7,7 @@ export default function Footer() {
 	return (
 		<div className="flex justify-center max-w-8xl mx-auto">
 			<div className="flex flex-col pt-10 md:pt-20">
-				<div className="px-2 sm:p-12 lg:px-24 grid sm:grid-cols-2 md:grid-cols-3 gap-y-4 text-sm">
+				<div className="px-2 sm:p-12 lg:px-24 md:flex justify-between gap-y-4 text-sm space-y-4">
 					<div className="flex flex-col">
 						<h3 className="text-hlinoteka-inactive font-bold">ADRESA</h3>
 						<span className={`${dmSans.className}`}>Hlinotéka Ceramic Studio</span>

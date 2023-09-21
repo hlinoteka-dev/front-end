@@ -25,7 +25,7 @@ export default function Product({ product }) {
 			</div>
 			<div>
 				<Link href="#contact-form">
-					<Button type="secondary">Mám zájem</Button>
+					<Button type="secondary text-xs">Mám zájem</Button>
 				</Link>
 			</div>
 			<GalleryBlank images={images} index={_id} isOpen={isOpen} setIsOpen={setIsOpen} />

@@ -25,7 +25,7 @@ export default function Button({ children, type, className, onClick, loading }) 
 
 	return (
 		<button
-			className={`${getButtonStyle(type)} ${className} text-xs font-bold uppercase rounded-3xl transition-colors duration-300 ease-in-out`}
+			className={`${getButtonStyle(type)} ${className} font-bold uppercase rounded-3xl transition-colors duration-300 ease-in-out`}
 			onClick={onClick}
 			disabled={type === "disabled" ? true : false}
 		>

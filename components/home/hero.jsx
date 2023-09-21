@@ -14,12 +14,12 @@ export default function Hero() {
 					</div>
 					<div className="">
 						<Link href="/sluzby">
-							<Button type="primary" className="w-full sm:w-auto">Kurzy a Openstudio</Button>
+							<Button type="primary" className="w-full sm:w-auto text-xs">Kurzy a Openstudio</Button>
 						</Link>
 					</div>
 					<div className="">
 						<Link href="/produkty">
-							<Button type="secondary" className="w-full sm:w-auto">Produkty</Button>
+							<Button type="secondary" className="w-full sm:w-auto text-xs">Produkty</Button>
 						</Link>
 					</div>
 					<SpinnerText className="absolute right-0 bottom-12 lg:top-12 translate-x-1/3 lg:-translate-x-1/3 lg:-translate-y-1/3 scale-75 z-5 lg:-z-10" />

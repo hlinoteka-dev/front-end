@@ -18,7 +18,7 @@ export default function Hero() {
 					</div>
 					<div className="">
 						<Link href="#services">
-							<Button type="primary" className="w-full sm:w-auto">Seznam služeb</Button>
+							<Button type="primary" className="w-full sm:w-auto text-xs">Seznam služeb</Button>
 						</Link>
 					</div>
 				</div>

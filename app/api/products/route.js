@@ -8,6 +8,7 @@ export async function GET(request) {
 	const page = url.searchParams.get('page')
 	const filter = url.searchParams.get('filter')
 	const tag = url.searchParams.get('tag')
+	const author = url.searchParams.get('author')
 	let products
 
 	let query = Product.find().sort({ _id:-1 }) 
@@ -24,6 +25,10 @@ export async function GET(request) {
 
 	if (tag) {
 		query = query.where('productTags').in([tag])
+	}
+
+	if (author && author !== 'Všichni') {
+		query = query.where('author').in([author])
 	}
 
 	if (filter === 'random') {

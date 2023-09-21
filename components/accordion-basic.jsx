@@ -1,6 +1,5 @@
 "use client"
 
-import { dmSans } from '@/components/fonts'
 import { useState } from 'react'
 
 export default function AccordionBasic({ children, title,  className }) {
@@ -22,7 +21,7 @@ export default function AccordionBasic({ children, title,  className }) {
 				</div>
 				<div className="ml-6 text-hlinoteka-light sm:text-xl text-left">{title}</div>
 			</button>
-			<div className={`${!open && 'hidden'} ${dmSans.className} pb-4`}>
+			<div className={`${!open && 'hidden'} pb-4`}>
 				{children}
 			</div>
 		</div>

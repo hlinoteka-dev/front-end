@@ -16,7 +16,7 @@ export default function Offering() {
 					</div>
 					<div>
 						<Link href="/sluzby">
-							<Button type="primary" className="w-full sm:w-auto">Zjistit více</Button>
+							<Button type="primary" className="w-full sm:w-auto text-xs">Zjistit více</Button>
 						</Link>
 					</div>
 				</div>

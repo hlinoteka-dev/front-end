@@ -71,7 +71,7 @@ export default function ContactForm() {
 								<label htmlFor="agree" className={`${dmSans.className}`}>Souhlasím se <a className="underline hover:no-underline" href="/privacy" target="_blank">zpracováním osobních údajů</a></label>
 							</div>
 							<div className="w-auto">
-								<Button type={`${(checked && !loading) ? "primary" : "disabled"}`} className="w-full sm:w-auto" loading={loading}>Odeslat</Button>
+								<Button type={`${(checked && !loading) ? "primary" : "disabled"}`} className="w-full sm:w-auto text-xs" loading={loading}>Odeslat</Button>
 							</div>
 						</form>
 					)}
