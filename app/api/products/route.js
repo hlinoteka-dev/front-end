@@ -10,7 +10,7 @@ export async function GET(request) {
 	const tag = url.searchParams.get('tag')
 	let products
 
-	let query = Product.find()
+	let query = Product.find().sort({ _id:-1 }) 
 
 	const perPage = 12
 
