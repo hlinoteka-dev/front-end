@@ -1,5 +1,5 @@
 import Image from "next/image"
-import HeroImage from "@/public/images/services-hero-main.jpg"
+import HeroImage from "@/public/images/contacts-hero-main.jpg"
 import SpinnerText from "../spinner-text"
 import { dmSans } from "@/components/fonts"
 import SocialIcons from "../social-icons"
