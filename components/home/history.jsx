@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function History() {
 	return (
-		<div className="border-b border-b-hlinoteka-special">
+		<div className="py-8 border-b border-b-hlinoteka-special">
 			<div className="grid grid-cols-1 lg:grid-cols-2 px-2 py-8 sm:p-12 lg:px-24 lg:py-20 max-w-8xl mx-auto">
 				<div>
 					<Image src={ImageOffering} alt="Kurzy točení na kruhu" className="object-cover rounded-2xl max-h-96 shadow-2xl shadow-black/30" />

@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function Offering() {
 	return (
-		<div className="border-b border-b-hlinoteka-special">
+		<div className="py-8 border-b border-b-hlinoteka-special">
 			<div className="grid grid-cols-1 lg:grid-cols-2 px-2 py-8 sm:p-12 lg:px-24 lg:py-20 max-w-8xl mx-auto">
 				<div className="order-2 lg:order-1 flex flex-col justify-center gap-2">
 					<h2 className="text-2xl pt-4 lg:py-2 font-bold leading-tight">Nabízíme</h2>

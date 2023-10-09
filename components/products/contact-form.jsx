@@ -42,7 +42,7 @@ export default function ContactForm() {
 	};
 
 	return (
-		<div className="border-b border-b-hlinoteka-special" id="contact-form">
+		<div className="border-b border-b-hlinoteka-special pt-20 -mt-20" id="contact-form">
 			<div className="px-8 py-12 lg:p-24 max-w-8xl mx-auto">
 				<div className="flex flex-col justify-center text-center gap-6">
 					<h2 className="text-2xl font-bold leading-tight">Nezávazná poptávka</h2>
@@ -58,7 +58,7 @@ export default function ContactForm() {
 						<form className="flex flex-col justify-center gap-5 w-full lg:w-5/12 mx-auto" onSubmit={sendEmail}>
 							<input type="text" name="fullName" placeholder="JMÉNO A PŘÍJMENÍ" className="text-center" required={true} />
 							<input type="email" name="email" placeholder="E-MAIL" className="text-center" required={true} />
-							<textarea name="message" id="" cols="30" rows="10" placeholder="TEXT" className="text-center" required={true} />
+							<textarea name="message" id="" cols="30" rows="10" placeholder="O KTERÝ PRODUKT/Y MÁTE ZÁJEM?" className="text-center" required={true} />
 							<div className="flex place-items-center gap-4">
 								<input type="checkbox" id="agree" className="hidden" checked={checked} onChange={() => setChecked(!checked)} required={true} />
 								<button className={`bg-hlinoteka-dark border-2 border-hlinoteka-special rounded-full ${checked ? "p-2 bg-hlinoteka-special" : "p-4"}`} onClick={() => setChecked(!checked)} type="button">

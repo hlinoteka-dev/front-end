@@ -6,12 +6,16 @@ import Image from 'next/image'
 import Button from '../button'
 import { dmSans } from '../fonts'
 
-export default function GalleryBlank({ images, isOpen, setIsOpen }) {
+export default function GalleryBlank({ indexFirstImage, images, isOpen, setIsOpen }) {
 
-	const [index, setIndex] = useState(0)
+	const [index, setIndex] = useState(indexFirstImage || 0)
 	const [total, setTotal] = useState(images.length)
 
 	useEffect(() => {
+		if (indexFirstImage !== undefined) {
+			setIndex(indexFirstImage)
+		}
+		setTotal(images.length)
 		function handleKeyDown(e) {
 			if (e.key === 'ArrowLeft') {
 				setIndex(index - 1 < 0 ? 0 : index - 1)
@@ -21,13 +25,22 @@ export default function GalleryBlank({ images, isOpen, setIsOpen }) {
 			}
 		}
 		window.addEventListener('keydown', handleKeyDown)
-		return () => window.removeEventListener('keydown', handleKeyDown)
-	}, [index])
+		return () => {
+			window.removeEventListener('keydown', handleKeyDown)
+		}
+	}, [images, indexFirstImage, total])
 
 
 	return (
 		<Transition appear show={isOpen}>
-			<Dialog as="div" onClose={() => setIsOpen(false)}>
+			<Dialog as="div" onClose={() => {
+				setIsOpen(false); 
+				if (indexFirstImage !== undefined) {
+					setIndex(indexFirstImage)
+				} else {
+					setIndex(0)
+				}
+			}}>
 				<Transition.Child
 					className="fixed inset-0 bg-hlinoteka-dark bg-opacity-90 z-50 transition-opacity"
 					enter="transition ease-out duration-200"
@@ -49,8 +62,13 @@ export default function GalleryBlank({ images, isOpen, setIsOpen }) {
 				>
 					<Dialog.Panel className="flex justify-center items-center">
 						<div>
-							<div className="mb-4 text-left">
+							<div className="mb-4 flex justify-between text-left">
 								<span>{index + 1} / {total}</span>
+								<Button type="icon-dark" className="" onClick={() => { setIsOpen(false) }}>
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+										<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+									</svg>
+								</Button>
 							</div>
 							<div className="md:px-8 w-full grid grid-cols-10 items-center">
 								<div className='w-full col-span-1 text-left'>
@@ -62,7 +80,7 @@ export default function GalleryBlank({ images, isOpen, setIsOpen }) {
 										</Button>
 									)}
 								</div>
-								<Image src={images[index].url} alt={images[index].text} className="w-full h-full max-w-3xl max-h-[48rem] col-span-8 rounded-2xl" />
+								<Image src={images[index].url} width={1024} height={1024} alt={images[index].text || ""} className="w-full h-full max-w-3xl max-h-[48rem] col-span-8 rounded-2xl" />
 								<div className='w-full col-span-1 text-right'>
 									{index + 1 < total && (
 										<Button type="icon" onClick={() => { setIndex(index + 1 > total - 1 ? index : index + 1) }}>

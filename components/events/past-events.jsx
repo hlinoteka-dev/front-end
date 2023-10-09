@@ -11,7 +11,7 @@ export default async function PastEvents() {
 	}
 
 	return (
-		<div className="border-b border-b-hlinoteka-special">
+		<div className="py-8 border-b border-b-hlinoteka-special">
 			<div className="flex flex-col p-12 px-2 py-8 sm:p-12 lg:px-24 lg:py-20 max-w-8xl mx-auto">
 				<div className="flex flex-col">
 					<h2 className="text-2xl font-bold leading-tight">Galerie uplynulých událostí</h2>

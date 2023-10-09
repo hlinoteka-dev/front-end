@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import Swiper from 'swiper'
 import { Navigation } from 'swiper/modules'
@@ -9,9 +9,12 @@ import 'swiper/css'
 
 
 import Button from '../button'
+import GalleryBlank from '../gallery/gallery-blank'
 
-export default function ServiceSwiper({ className, index, images }) {
+export default function 	ServiceSwiper({ className, index, images }) {
 
+	const [indexFirstImage, setIndexFirstImage] = useState(0)
+	const [isOpen, setIsOpen] = useState(false)
 	const photosUrl = images.map((image) => `/images/services/${image}`)
 
 	useEffect(() => {
@@ -35,11 +38,12 @@ export default function ServiceSwiper({ className, index, images }) {
 		<>
 			<div className={`testimonials-carousel-${index} swiper-container`}>
 				<div className="swiper-wrapper">
-					{images.map((image, index) => (
-						<div className="swiper-slide" key={index}><Image src={`/images/services/${image.file}`} width={image.width} height={image.height} alt='Hlinotéka' className="w-auto h-80 object-cover rounded-2xl" /></div>
+					{images.map((image, imageIndex) => (
+						<div className="swiper-slide" key={imageIndex}><Image src={image.url} width={image.width} height={image.height} alt='Hlinotéka' className="w-auto h-80 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() =>{setIndexFirstImage(imageIndex); setIsOpen(true)}}/></div>
 					))}
 				</div>
 			</div>
+			<GalleryBlank indexFirstImage={indexFirstImage} images={images} isOpen={isOpen} setIsOpen={setIsOpen} />
 		</>
 	)
 }

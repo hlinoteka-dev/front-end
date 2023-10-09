@@ -23,22 +23,22 @@ export default function Accordion() {
 			button: "Rezervace",
 			images: [
 				{
-					file: "26A1575.jpg",
+					url: "/images/services/26A1575.jpg",
 					width: 667,
 					height: 1000
 				},
 				{
-					file: "26A1561.jpg",
+					url: "/images/services/26A1561.jpg",
 					width: 1360,
 					height: 1000
 				},
 				{
-					file: "IMG2372.jpg",
+					url: "/images/services/IMG2372.jpg",
 					width: 750,
 					height: 1000
 				},
 				{
-					file: "IMG6303.jpg",
+					url: "/images/services/IMG6303.jpg",
 					width: 750,
 					height: 1000
 				}
@@ -58,27 +58,27 @@ export default function Accordion() {
 			button: "Rezervace",
 			images: [
 				{
-					file: "IMG8428.jpg",
+					url: "/images/services/IMG8428.jpg",
 					width: 750,
 					height: 1000
 				},
 				{
-					file: "IMG8430.jpg",
+					url: "/images/services/IMG8430.jpg",
 					width: 750,
 					height: 1000
 				},
 				{
-					file: "IMG8435.jpg",
+					url: "/images/services/IMG8435.jpg",
 					width: 750,
 					height: 1000
 				},
 				{
-					file: "IMG8443.jpg",
+					url: "/images/services/IMG8443.jpg",
 					width: 1334,
 					height: 1000
 				},
 				{
-					file: "IMG8467.jpg",
+					url: "/images/services/IMG8467.jpg",
 					width: 750,
 					height: 1000
 				}
@@ -98,22 +98,22 @@ export default function Accordion() {
 			button: "Rezervace",
 			images: [
 				{
-					file: "Hlinoteka_Juan-Calderon_-123.jpg",
+					url: "/images/services/Hlinoteka_Juan-Calderon_-123.jpg",
 					width: 1500,
 					height: 1000
 				},
 				{
-					file: "Hlinoteka_Juan-Calderon_-139.jpg",
+					url: "/images/services/Hlinoteka_Juan-Calderon_-139.jpg",
 					width: 667,
 					height: 1000
 				},
 				{
-					file: "Hlinoteka_Juan-Calderon_-145.jpg",
+					url: "/images/services/Hlinoteka_Juan-Calderon_-145.jpg",
 					width: 750,
 					height: 1000
 				},
 				{
-					file: "Hlinoteka_Juan-Calderon_-188.jpg",
+					url: "/images/services/Hlinoteka_Juan-Calderon_-188.jpg",
 					width: 750,
 					height: 1000
 				}
@@ -133,22 +133,22 @@ export default function Accordion() {
 			button: "Rezervace",
 			images: [
 				{
-					file: "IMG3966.jpg",
+					url: "/images/services/IMG3966.jpg",
 					width: 750,
 					height: 1000
 				},
 				{
-					file: "IMG3916.jpg",
+					url: "/images/services/IMG3916.jpg",
 					width: 1180,
 					height: 1000
 				},
 				{
-					file: "IMG3910.jpg",
+					url: "/images/services/IMG3910.jpg",
 					width: 750,
 					height: 1000
 				},
 				{
-					file: "IMG1503.jpg",
+					url: "/images/services/IMG1503.jpg",
 					width: 750,
 					height: 1000
 				}
@@ -173,7 +173,7 @@ export default function Accordion() {
 										)}
 										<ServiceSwiperButtons index={index} />
 									</div>
-									<div className="mb-8 relative before:absolute before:inset-0 before:-translate-x-full before:z-20 before:bg-gradient-to-l before:from-transparent before:to-hlinoteka-dark before:to-20% after:absolute after:inset-0 after:translate-x-full after:z-20 after:bg-gradient-to-r after:from-transparent after:to-hlinoteka-dark after:to-20%">
+									<div className="mb-8 relative before:absolute before:inset-0 before:-translate-x-full before:z-20 before:bg-gradient-to-l before:from-transparent before:to-hlinoteka-dark before:to-20% after:absolute after:inset-0 after:translate-x-full after:z-20 after:bg-gradient-to-r after:from-transparent after:to-hlinoteka-dark after:to-20% before:pointer-events-none after:pointer-events-none">
 										<ServiceSwiper images={accordion.images} index={index} />
 									</div>
 									<div className={`lg:mb-8 grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-4 ${dmSans.className}`}>

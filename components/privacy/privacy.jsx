@@ -3,7 +3,7 @@ import { dmSans } from "../fonts"
 export default function Privacy() {
 
 	return (
-		<div className="border-b border-b-hlinoteka-special">
+		<div className="py-8 border-b border-b-hlinoteka-special">
 			<div className="flex flex-col px-2 py-8 sm:p-12 xl:px-24 xl:py-20 max-w-8xl mx-auto">
 				<div className={dmSans.className}>
 					<h1 className="mb-4 text-5xl">Privacy Policy for Hlinoteka</h1>

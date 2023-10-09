@@ -8,7 +8,7 @@ import Link from "next/link"
 export default function Hero() {
 	return (
 		<div className="">
-			<div className="relative grid lg:grid-cols-2 px-2 py-8 sm:p-12 lg:px-24 lg:pt-20 lg:pb-28 max-w-8xl mx-auto">
+			<div className="grid lg:grid-cols-2 px-2 py-8 sm:p-12 lg:px-24 lg:pt-20 lg:pb-28 max-w-8xl mx-auto">
 				<div className="order-2 lg:order-1 flex flex-col justify-center gap-4">
 					<div className="md:w-1/2">
 						<h1 className="mt-4 lg:mt-0 text-2xl font-bold leading-tight">Openstudio, kurzy a výpaly</h1>
@@ -22,10 +22,10 @@ export default function Hero() {
 						</Link>
 					</div>
 				</div>
-				<div className="order-1 lg:order-2">
+				<div className="relative order-1 lg:order-2">
 					<Image src={HeroImage} alt="Hlinotéka" className="w-full object-cover rounded-2xl max-h-96 shadow-2xl shadow-black/30" />
+					<SpinnerText className="absolute xl:-bottom-32 xl:-right-40 scale-75 -z-10" />
 				</div>
-				<SpinnerText className="absolute right-6 lg:right-16 bottom-32 lg:bottom-2 lg:translate-x-1/2 scale-75 lg:scale-100 -z-10 lg:z-10" />
 			</div>
 		</div>
 	)

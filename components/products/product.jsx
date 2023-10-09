@@ -18,17 +18,17 @@ export default function Product({ product }) {
 				<Image src={images[0].url} width={365} height={430} className="w-[100%] h-[100%] object-cover" alt={name} onClick={() => { setIsOpen(true) }} />
 				{newProduct && <span className="absolute top-2 right-2 px-4 py-1.5 text-xs bg-hlinoteka-special text-hlinoteka-light rounded-2xl">NOVINKA</span>}
 			</div>
-			<div className={`flex flex-col ${dmSans.className}`}>
+			<div className={`flex flex-col ${dmSans.className} text-md`}>
 				<span>{name}&nbsp;<span className="text-hlinoteka-inactive font-bold">{price}</span></span>
 				<span>Autor:&nbsp;{author}</span>
 				<span>{size}</span>
 			</div>
 			<div>
 				<Link href="#contact-form">
-					<Button type="secondary text-xs">Mám zájem</Button>
+					<Button type="secondary" className="text-xs">Mám zájem</Button>
 				</Link>
 			</div>
-			<GalleryBlank images={images} index={_id} isOpen={isOpen} setIsOpen={setIsOpen} />
+			<GalleryBlank indexFirstImage={0} images={images} isOpen={isOpen} setIsOpen={setIsOpen} />
 		</div>
 	)
 }

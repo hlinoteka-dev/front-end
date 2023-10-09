@@ -28,7 +28,7 @@ export default async function Event() {
 	const timeTo = new Date(event.time[1]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
 
 	return (
-		<div className="border-b border-b-hlinoteka-special">
+		<div className="py-8 border-b border-b-hlinoteka-special">
 			<div className="px-2 py-8 sm:p-12 lg:px-24 lg:py-20 max-w-8xl mx-auto">
 				<div className="md:grid md:grid-cols-2 md:max-h-96 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
 					<div>

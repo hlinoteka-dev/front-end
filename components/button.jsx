@@ -17,7 +17,7 @@ export default function Button({ children, type, className, onClick, loading }) 
 			case "icon-dark":
 				return "p-[8px] bg-hlinoteka-dark hover:bg-hlinoteka-light text-hlinoteka-light hover:text-hlinoteka-dark border border-hlinoteka-light"
 			case "icon-mobile":
-				return "px-[16px] py-[4px] bg-hlinoteka-dark text-hlinoteka-special border-2 border-hlinoteka-special"
+				return "px-[16px] py-[4px] bg-hlinoteka-dark text-hlinoteka-special border border-hlinoteka-special"
 			default:
 				return "px-6 py-2 bg-hlinoteka-gray hover:bg-hlinoteka-active text-hlinoteka-active hover:text-hlinoteka-dark"
 		}

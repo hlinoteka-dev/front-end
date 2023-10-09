@@ -18,6 +18,11 @@ export default function LoadMoreProducts({ query }) {
 		}
 	}, [inView])
 
+	useEffect(() => {
+		setProducts([])
+		setPagesLoaded(1)
+	}, [query])
+
 	function delay(ms) {
 		return new Promise((resolve) => setTimeout(resolve, ms))
 	}
@@ -34,7 +39,7 @@ export default function LoadMoreProducts({ query }) {
 		<>
 			<ProductsContainer products={products} />
 			{loading && (
-				<div ref={ref} className="flex justify-center">
+				<div ref={ref} className="mt-8 flex justify-center">
 					<Spinner />
 				</div>
 			)}

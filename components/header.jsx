@@ -25,7 +25,7 @@ export default function Header() {
 	}, [open])
 
 	return (
-		<header className="xl:px-8 w-full fixed top-0 left-0 bg-hlinoteka-dark z-50">
+		<header className="px-4 xl:px-8 w-full fixed top-0 left-0 bg-hlinoteka-dark z-50">
 			<div className="border-b border-b-hlinoteka-special hidden xl:block">
 				<div className="px-8 mx-auto max-w-8xl flex justify-between h-20">
 					<Link className="flex place-items-center" href="/">
@@ -48,7 +48,7 @@ export default function Header() {
 					</div>
 				</div>
 			</div>
-			<div className="p-2 w-full bg-hlinoteka-dark border-b border-b-hlinoteka-special xl:hidden">
+			<div className="p-4 bg-hlinoteka-dark border-b border-b-hlinoteka-special xl:hidden">
 				<div className="flex justify-between">
 					<Link className="flex place-items-center w-[120px]" href="/">
 						<svg width="37" height="52" viewBox="0 0 37 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,13 +63,13 @@ export default function Header() {
 					<div className="my-auto w-[120px] text-right">
 						{open ? (
 							<Button type="icon-mobile" onClick={() => setOpen(false)} className="text-md">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
 								</svg>
 							</Button>
 						) : (
 							<Button type="icon-mobile" onClick={() => setOpen(true)} className="text-md">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
 								</svg>
 							</Button>

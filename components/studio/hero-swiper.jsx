@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import Swiper from 'swiper'
 import { Navigation } from 'swiper/modules'
@@ -15,9 +15,28 @@ import Image04 from '@/public/images/studio/Hlinoteka_Juan-Calderon_-077.jpg'
 import Image05 from '@/public/images/studio/Hlinoteka_Juan-Calderon_-176.jpg'
 import Image06 from '@/public/images/studio/Hlinoteka_Juan-Calderon_-179.jpg'
 import Image07 from '@/public/images/studio/Hlinoteka_Juan-Calderon_-181.jpg'
+import GalleryBlank from '../gallery/gallery-blank'
 
 export default function HeroGallery({ className }) {
 
+	const images = [{
+		url: Image01
+	}, {
+		url: Image02
+	}, {
+		url: Image03
+	}, {
+		url: Image04
+	}, {
+		url: Image05
+	}, {
+		url: Image06
+	}, {
+		url: Image07
+	}]
+	const [index, setIndex] = useState(0)
+	const [isOpen, setIsOpen] = useState(false)
+	
 	useEffect(() => {
 		const carousel = new Swiper('.testimonials-carousel', {
 			breakpoints: {
@@ -50,14 +69,15 @@ export default function HeroGallery({ className }) {
 			</div>
 			<div className="testimonials-carousel swiper-container">
 				<div className="swiper-wrapper">
-					<div className="swiper-slide"><Image src={Image01} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl" /></div>
-					<div className="swiper-slide"><Image src={Image02} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl" /></div>
-					<div className="swiper-slide"><Image src={Image03} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl" /></div>
-					<div className="swiper-slide"><Image src={Image04} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl" /></div>
-					<div className="swiper-slide"><Image src={Image05} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl" /></div>
-					<div className="swiper-slide"><Image src={Image06} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl" /></div>
-					<div className="swiper-slide"><Image src={Image07} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl" /></div>
+					<div className="swiper-slide"><Image src={Image01} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() => {setIndex(0); setIsOpen(true)}}/></div>
+					<div className="swiper-slide"><Image src={Image02} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() => {setIndex(1); setIsOpen(true)}}/></div>
+					<div className="swiper-slide"><Image src={Image03} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() => {setIndex(2); setIsOpen(true)}}/></div>
+					<div className="swiper-slide"><Image src={Image04} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() => {setIndex(3); setIsOpen(true)}}/></div>
+					<div className="swiper-slide"><Image src={Image05} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() => {setIndex(4); setIsOpen(true)}}/></div>
+					<div className="swiper-slide"><Image src={Image06} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() => {setIndex(5); setIsOpen(true)}}/></div>
+					<div className="swiper-slide"><Image src={Image07} alt='Hlinotéka' className="w-auto h-96 object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer" onClick={() => {setIndex(6); setIsOpen(true)}}/></div>
 				</div>
+				<GalleryBlank indexFirstImage={index} images={images} isOpen={isOpen} setIsOpen={setIsOpen} />
 			</div>
 		</>
 	)

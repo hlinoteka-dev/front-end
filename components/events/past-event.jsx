@@ -25,7 +25,7 @@ export default function PastEvent({ event }) {
 			</div>
 			{images.length > 0 && (
 				<div className="flex gap-4">
-					<div className="mb-8 relative lg:before:absolute lg:before:inset-0 lg:before:-translate-x-full lg:before:z-20 lg:before:bg-gradient-to-l lg:before:from-transparent lg:before:to-hlinoteka-dark lg:before:to-20% lg:after:absolute lg:after:inset-0 lg:after:translate-x-full lg:after:z-20 lg:after:bg-gradient-to-r lg:after:from-transparent lg:after:to-hlinoteka-dark lg:after:to-20%">
+					<div className="mb-8 relative lg:before:absolute lg:before:inset-0 lg:before:-translate-x-full lg:before:z-20 lg:before:bg-gradient-to-l lg:before:from-transparent lg:before:to-hlinoteka-dark lg:before:to-20% lg:after:absolute lg:after:inset-0 lg:after:translate-x-full lg:after:z-20 lg:after:bg-gradient-to-r lg:after:from-transparent lg:after:to-hlinoteka-dark lg:after:to-20% before:pointer-events-none after:pointer-events-none">
 						<PastEventsSwiper images={images} index={_id} />
 					</div>
 				</div>

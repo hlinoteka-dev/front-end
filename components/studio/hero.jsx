@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Hero() {
 	return (
-		<div className="border-b border-b-hlinoteka-special">
+		<div className="py-8 border-b border-b-hlinoteka-special">
 			<div className="grid grid-cols-1 lg:grid-cols-2 px-2 py-8 sm:p-12 lg:px-24 lg:py-20 lg:pt-40 lg:pb-24 max-w-8xl mx-auto">
 				<div className="relative flex flex-col justify-center gap-2">
 					<div className="lg:w-[62%] py-2">
@@ -27,7 +27,7 @@ export default function Hero() {
 			<div>
 			</div>
 			<div className="px-2 py-8 sm:px-12 sm:pb-12 lg:px-24 lg:py-0 max-w-8xl mx-auto">
-				<div className="lg:pb-24 relative lg:before:absolute lg:before:inset-0 lg:before:-translate-x-full lg:before:z-20 lg:before:bg-gradient-to-l lg:before:from-transparent lg:before:to-hlinoteka-dark lg:before:to-20% lg:after:absolute lg:after:inset-0 lg:after:translate-x-full lg:after:z-20 after:bg-gradient-to-r lg:after:from-transparent lg:after:to-hlinoteka-dark lg:after:to-20%">
+				<div className="lg:pb-24 relative lg:before:absolute lg:before:inset-0 lg:before:-translate-x-full lg:before:z-20 lg:before:bg-gradient-to-l lg:before:from-transparent lg:before:to-hlinoteka-dark lg:before:to-20% lg:after:absolute lg:after:inset-0 lg:after:translate-x-full lg:after:z-20 after:bg-gradient-to-r lg:after:from-transparent lg:after:to-hlinoteka-dark lg:after:to-20% before:pointer-events-none after:pointer-events-none">
 					<HeroGallery />
 				</div>
 			</div>
