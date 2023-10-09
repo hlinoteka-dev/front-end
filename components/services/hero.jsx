@@ -24,7 +24,7 @@ export default function Hero() {
 				</div>
 				<div className="relative order-1 lg:order-2">
 					<Image src={HeroImage} alt="Hlinotéka" className="w-full object-cover rounded-2xl max-h-96 shadow-2xl shadow-black/30" />
-					<SpinnerText className="absolute xl:-bottom-32 xl:-right-40 scale-75 -z-10" />
+					<SpinnerText className="absolute -right-20 -bottom-32 lg:-right-40 scale-75 -z-10" />
 				</div>
 			</div>
 		</div>

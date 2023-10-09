@@ -7,7 +7,7 @@ import SocialIcons from "../social-icons"
 export default function Hero() {
 	return (
 		<div className="py-8 border-b border-b-hlinoteka-special">
-			<div className="grid lg:grid-cols-2 px-2 py-8 sm:p-12 lg:px-24 lg:pt-20 lg:pb-28 max-w-8xl mx-auto">
+			<div className="grid lg:grid-cols-2 px-8 py-8 sm:p-12 lg:px-24 lg:pt-20 lg:pb-28 max-w-8xl mx-auto">
 				<div className="mt-4 lg:mt-0 order-2 lg:order-1 flex flex-col justify-center gap-4">
 					<div className="md:w-1/2">
 						<h1 className="text-2xl font-bold leading-tight">Hlinotéka</h1>
@@ -33,7 +33,7 @@ export default function Hero() {
 				</div>
 				<div className="relative order-1 lg:order-2">
 					<Image src={HeroImage} alt="Hlinotéka" className="object-cover rounded-2xl max-h-96 shadow-2xl shadow-black/30" />
-					<SpinnerText className="absolute xl:-bottom-32 xl:-right-40 scale-75 -z-10" />
+					<SpinnerText className="absolute -right-20 -bottom-32 lg:-right-40 scale-75 -z-10" />
 				</div>
 			</div>
 		</div>
