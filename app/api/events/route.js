@@ -27,5 +27,5 @@ export async function GET(request) {
 	}
 
 	const events = await query.exec()
-	return new Response(JSON.stringify(events))
+	return new Response(JSON.stringify(events, null, 2))
 }

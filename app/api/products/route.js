@@ -11,16 +11,16 @@ export async function GET(request) {
 	const author = url.searchParams.get('author')
 	let products
 
-	let query = Product.find().sort({ _id:-1 }) 
+	let query = Product.find() 
 
 	const perPage = 12
 
 	if (sortBy === 'author') {
-		query = query.sort({ author: 1 })
-	}
-
-	if (sortBy === 'top') {
-		query = query.sort({ topProduct: -1 })
+		query = query.sort({ author: 1, _id: -1 })
+	} else if (sortBy === 'top') {
+		query = query.sort({ topProduct: -1, _id: -1 })
+	} else {
+		query = query.sort({ _id: -1 })
 	}
 
 	if (tag) {
@@ -33,7 +33,7 @@ export async function GET(request) {
 
 	if (filter === 'random') {
 		products = await Product.aggregate([{ '$sample': { 'size': 10 } }])
-		return new Response(JSON.stringify(products))
+		return new Response(JSON.stringify(products, null, 2))
 	}
 
 	if (page) {
@@ -42,5 +42,5 @@ export async function GET(request) {
 
 	products = await query.exec()
 
-	return new Response(JSON.stringify(products))
+	return new Response(JSON.stringify(products, null, 2))
 }

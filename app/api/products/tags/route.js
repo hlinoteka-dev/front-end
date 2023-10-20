@@ -6,5 +6,5 @@ export const revalidate = 0
 export async function GET(request) {
 	await mongooseConnect()
 	const tags = await Tag.find()
-	return new Response(JSON.stringify(tags))
+	return new Response(JSON.stringify(tags, null, 2))
 }
