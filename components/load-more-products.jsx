@@ -21,6 +21,7 @@ export default function LoadMoreProducts({ query }) {
 	useEffect(() => {
 		setProducts([])
 		setPagesLoaded(1)
+		setLoading(true)
 	}, [query])
 
 	function delay(ms) {

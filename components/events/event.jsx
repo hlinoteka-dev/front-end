@@ -4,7 +4,7 @@ import { dmSans } from "@/components/fonts"
 
 export default async function Event({ event }) {
 
-	const dateFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { month: '2-digit', day: '2-digit' })
+	const dateFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
 	const dateTo = new Date(event.time[1]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
 	const timeFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
 	const timeTo = new Date(event.time[1]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
@@ -26,7 +26,7 @@ export default async function Event({ event }) {
 				<div className="lg:text-2xl font-bold text-hlinoteka-inactive">
 					{time}
 				</div>
-				<div className="mt-4 max-h-52 overflow-y-hidden mb-auto">
+				<div className="mt-4 max-h-52 overflow-y-scroll mb-auto">
 					<p className={`${dmSans.className} font-sans pr-12`} dangerouslySetInnerHTML={{ __html: event.description }} />
 				</div>
 				<div className="mt-4 sm:flex sm:justify-end">

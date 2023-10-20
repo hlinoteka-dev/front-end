@@ -84,7 +84,8 @@ export default function GalleryBlank({ indexFirstImage, images, isOpen, setIsOpe
 									src={images[index].url}
 									width={1024}
 									height={1024}
-									alt={images[index].text || ""}className="w-full h-full max-w-3xl max-h-[48rem] col-span-8 rounded-2xl"
+									alt={images[index].text || ""}
+									className="w-full h-full max-w-3xl max-h-[48rem] col-span-8 rounded-2xl"
 								/>
 								<div className='w-full col-span-1 text-right'>
 									{index + 1 < total && (

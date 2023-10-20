@@ -22,10 +22,12 @@ export default async function Event() {
 	}
 
 	const event = data[0]
-	const dateFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { month: '2-digit', day: '2-digit' })
+	const dateFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
 	const dateTo = new Date(event.time[1]).toLocaleString('cs-CZ', { year: 'numeric', month: '2-digit', day: '2-digit' })
 	const timeFrom = new Date(event.time[0]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
 	const timeTo = new Date(event.time[1]).toLocaleString('cs-CZ', { hour: '2-digit', minute: '2-digit' })
+	const date = dateFrom === dateTo ? dateFrom : `${dateFrom} - ${dateTo}`
+	const time = timeFrom === timeTo ? timeFrom : `${timeFrom} - ${timeTo}`
 
 	return (
 		<div className="py-8 border-b border-b-hlinoteka-special">
@@ -39,12 +41,12 @@ export default async function Event() {
 							{event.name}
 						</div>
 						<div className="lg:text-2xl font-bold text-hlinoteka-inactive">
-							{dateFrom} - {dateTo}
+							{date}
 						</div>
 						<div className="lg:text-2xl font-bold text-hlinoteka-inactive">
-							{timeFrom} - {timeTo}
+							{time}
 						</div>
-						<div className="mt-4 max-h-52 overflow-y-hidden mb-auto">
+						<div className="mt-4 max-h-52 overflow-y-scroll mb-auto">
 							<p className={`${dmSans.className} font-sans pr-12`} dangerouslySetInnerHTML={{ __html: event.description }} />
 						</div>
 						<div className="mt-4 sm:flex sm:justify-end w-full">

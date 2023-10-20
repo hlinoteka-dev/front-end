@@ -14,8 +14,8 @@ export default function Member({ member }) {
 
 	return (
 		<div className={`flex flex-col gap-4 ${dmSans.className}`}>
-			<div className="flex flex-col overflow-hidden lg:max-h-[480px] rounded-2xl shadow-2xl shadow-black/30">
-				<Image src={photoUrl} width={365} height={430} alt={name} className="w-full" />
+			<div className="overflow-hidden">
+				<Image src={photoUrl} width={365} height={430} alt={name} className="w-full object-cover h-auto rounded-2xl shadow-2xl shadow-black/30" />
 			</div>
 			<div className="flex justify-between lg:flex-col gap-4">
 				<div>

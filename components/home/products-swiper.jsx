@@ -35,8 +35,9 @@ export default function ProductsSwiper({ products, className }) {
 					{products.map((product, index) => (
 						<div className="swiper-slide" key={index}>
 							<Image
-								src={product.images && product.images.length > 0 ? product.images[0].url : "/images/placeholder.png"}
-								width={365} height={430}
+								src={product.images[0].url}
+								width={365}
+								height={430}
 								alt={product.name}
 								className="w-[365px] h-[430px] object-cover rounded-2xl border-2 border-transparent hover:border-hlinoteka-special cursor-pointer"
 								onClick={() => { 
