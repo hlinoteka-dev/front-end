@@ -17,7 +17,7 @@ export async function GET(request) {
 
 	if (sortBy === 'author') {
 		query = query.sort({ author: 1, _id: -1 })
-	} else if (sortBy === 'top') {
+	} else if (sortBy === 'topProduct') {
 		query = query.sort({ topProduct: -1, _id: -1 })
 	} else {
 		query = query.sort({ _id: -1 })
